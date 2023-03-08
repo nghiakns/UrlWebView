@@ -14,7 +14,6 @@ class UrlDetailViewController: UIViewController {
     @IBOutlet weak var imageDropDownI: UIImageView!
     @IBOutlet weak var dropDownDomainButton: UIButton!
     @IBOutlet weak var IPView: UIView!
-    
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var paramTextfield: UITextField!
     @IBOutlet weak var homeView: UIView!
