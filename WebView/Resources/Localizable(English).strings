@@ -1,0 +1,56 @@
+/* 
+  Localizable(English).strings
+  WebView
+
+  Created by Kim Nghĩa on 01/03/2023.
+  
+*/
+
+"Common.Ok" = "OK";
+"Common.Cancel" = "CANCEL";
+"Common.Next" = "NEXT";
+"Common.Close" = "Close";
+"Common.Information" = "Info";
+"Common.Confirmation" = "Confirmation";
+"Common.Warning" = "Warning";
+"Common.Back" = "Back";
+"Common.Yes" = "Yes";
+"Common.No" = "No";
+"Common.Loading" = "Loading…";
+"Common.Login" = "Login";
+"Common.Password" = "Password";
+"Common.Name" = "Name";
+"Common.Email" = "Email";
+"Common.Add" = "Add";
+
+"Home.Title" = "Home";
+
+"Setting.Title" = "Login";
+"Setting.Notice" = "If you have purchased an upgrade package, enter your credentials below to enable addition features";
+"Setting.Language" = "Language";
+"Setting.Language.VietNam" = "Vietnamese";
+"Setting.Language.English" = "English";
+"Setting.ResetPassword" = "Reset Password";
+
+"Network.Response.Success" = "welcomergok";
+"Network.Popup.Title.Success" = "Login Successfully";
+
+"Add.Title" = "Add URL";
+"Add.Domain" = "IP address or domain";
+"Add.HTTPS" = "HTTPS";
+"Add.RTSP" = "RTSP";
+"Add.Autoload" = "Autoload";
+"Add.AutoloadPage" = "Autoload Page";
+"Add.AutoloadPage.Touch" = "Touch";
+"Add.AutoloadPage.ScadaVis" = "Scada-Vis";
+"Add.AutoloadPage.Schedulers" = "Schedulers";
+"Add.AutoloadPage.Mosaic" = "Mosaic";
+"Add.AutoloadPage.Assistant" = "Assistant";
+"Add.AutoloadPage.Premium" = "Premium";
+"Add.Param" = "Params";
+"Add.Icon" = "Icon";
+
+"UpdateURL" = "Update URL";
+
+
+
