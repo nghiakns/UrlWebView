@@ -54,7 +54,8 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func addButton(_ sender: Any) {
-        
+        guard let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "UrlDetailViewController") as? UrlDetailViewController else { return }
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
 }

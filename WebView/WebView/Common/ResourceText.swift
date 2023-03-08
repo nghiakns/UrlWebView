@@ -66,52 +66,57 @@ enum ResourceText: String {
     }
 }
 
-var localized: String {
-  var preferred = "-"
-  if let pl = NSLocale.preferredLanguages.first, let pref = pl.split(separator: "-").first { preferred = String(pref) } //<- selected device language or "-"
+extension String {
+    
+    var localized: String {
 
-  guard let _ = Bundle.main.path(forResource: preferred, ofType: "lproj") else {
-      //PREFERRED ISN'T LISTED. FALLING BACK TO EN
-      guard let en_path = Bundle.main.path(forResource: "ja", ofType: "lproj"), let languageBundle = Bundle(path: en_path) else {
-          //EN ISN'T LISTED. RETURNING UNINTERNATIONALIZED STRING
-          return self
+      var preferred = "-"
+      if let pl = NSLocale.preferredLanguages.first, let pref = pl.split(separator: "-").first { preferred = String(pref) } //<- selected device language or "-"
+      guard let _ = Bundle.main.path(forResource: preferred, ofType: "lproj") else {
+          //PREFERRED ISN'T LISTED. FALLING BACK TO EN
+          guard let en_path = Bundle.main.path(forResource: "ja", ofType: "lproj"), let languageBundle = Bundle(path: en_path) else {
+              //EN ISN'T LISTED. RETURNING UNINTERNATIONALIZED STRING
+              return self
+          }
+          //EN EXISTS
+          return languageBundle.localizedString(forKey: self, value: self, table: nil)
       }
-      //EN EXISTS
-      return languageBundle.localizedString(forKey: self, value: self, table: nil)
-  }
-  //PREFERRED IS LISTED. STRAIGHT I18N IS OKAY
-  return NSLocalizedString(self, comment: "")
-}
-
-func getDomain() -> Double {
-    switch self {
-    case "http".localized:
-        return 1
-    case "https".localized:
-        return 2
-    case "rtsp".localized:
-        return 3
-    default:
-        return 0
+      //PREFERRED IS LISTED. STRAIGHT I18N IS OKAY
+      return NSLocalizedString(self, comment: "")
     }
-}
-
-func getHome() -> Double {
-    switch self {
-    case "Touch".localized:
-        return 1
-    case "Scada-Vis".localized:
-        return 2
-    case "Schedulers".localized:
-        return 3
-    case "Mosaic".localized:
-        return 4
-    case "Assistant".localized:
-        return 5
-    case "Premium".localized:
-        return 6
-    default:
-        return 0
+    
+    func getDomain() -> Double {
+        switch self {
+        case "http".localized:
+            return 1
+        case "https".localized:
+            return 2
+        case "rtsp".localized:
+            return 3
+        default:
+            return 0
+        }
     }
+    
+    func getHome() -> Double {
+        switch self {
+        case "Touch".localized:
+            return 1
+        case "Scada-Vis".localized:
+            return 2
+        case "Schedulers".localized:
+            return 3
+        case "Mosaic".localized:
+            return 4
+        case "Assistant".localized:
+            return 5
+        case "Premium".localized:
+            return 6
+        default:
+            return 0
+        }
+    }
+
+    
 }
 
