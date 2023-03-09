@@ -8,5 +8,5 @@
 import Foundation
 
 struct BaseApiRespositories {
-    static let url = "http://raigamma.000webhostapp.com/rai.php?"
+    static let url = "https://raigamma.000webhostapp.com/rai.php"
 }

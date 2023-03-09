@@ -12,6 +12,10 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var tableview: UITableView!
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var homeTitle: UILabel!
+    @IBOutlet weak var infoButton: UIButton!
+    @IBOutlet weak var infoImage: UIImageView!
+    @IBOutlet weak var addImage: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -27,7 +31,13 @@ class HomeViewController: UIViewController {
         self.view.alpha = 1
     }
     func config() {
-        //
+//        infoImage.backgroundColor = ResourceColor.headerView
+//        addImage.backgroundColor = ResourceColor.headerView
+//        infoImage.layer.cornerRadius = infoImage.frame.width / 2
+//        infoImage.tintColor = ResourceColor.headerView
+//        addImage.tintColor = ResourceColor.headerView
+//        infoImage.setImageColor(color: ResourceColor.headerView)
+//        addImage.setImageColor(color: ResourceColor.headerView)
         headerView.backgroundColor = ResourceColor.headerView
         homeTitle.text = "Home"
         homeTitle.textColor = .white

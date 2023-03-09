@@ -100,6 +100,17 @@ extension String {
         }
     }
     
+    func getLanguage() -> Double {
+        switch self {
+        case "Tiếng Việt".localized:
+            return 1
+        case "English".localized:
+            return 2
+        default:
+            return 0
+        }
+    }
+    
     func getHome() -> Double {
         switch self {
         case "Touch".localized:
