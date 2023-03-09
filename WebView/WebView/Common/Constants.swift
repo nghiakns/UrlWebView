@@ -25,6 +25,10 @@ struct DropdownData {
         "Premium".localized,
     ]
     
+    static let languageDropdown = [
+        "Tiếng Việt".localized,
+        "English".localized
+    ]
     
     static func getInspectionTimeWithInterval(interval: Double) -> String {
         switch interval {

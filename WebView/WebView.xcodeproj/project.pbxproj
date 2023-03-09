@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		D112957529AF29B700E262FA /* Localizable(English).strings in Resources */ = {isa = PBXBuildFile; fileRef = D112957429AF29B700E262FA /* Localizable(English).strings */; };
 		D112957729AF29E500E262FA /* Localizable(Vie).strings in Resources */ = {isa = PBXBuildFile; fileRef = D112957629AF29E500E262FA /* Localizable(Vie).strings */; };
+		D12CF05029B9C04A00C5319C /* UrlModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12CF04F29B9C04A00C5319C /* UrlModels.swift */; };
 		D15AF8A529B8279600999DBA /* SettingViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15AF8A429B8279600999DBA /* SettingViewModels.swift */; };
 		D15AF8A829B82A3E00999DBA /* BaseApiRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15AF8A729B82A3E00999DBA /* BaseApiRepository.swift */; };
 		D187821129A628810085B86F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D187821029A628810085B86F /* AppDelegate.swift */; };
@@ -34,6 +35,7 @@
 		6E738F551A67B49D6064B121 /* Pods-WebView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebView.debug.xcconfig"; path = "Target Support Files/Pods-WebView/Pods-WebView.debug.xcconfig"; sourceTree = "<group>"; };
 		D112957429AF29B700E262FA /* Localizable(English).strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = "Localizable(English).strings"; sourceTree = "<group>"; };
 		D112957629AF29E500E262FA /* Localizable(Vie).strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = "Localizable(Vie).strings"; sourceTree = "<group>"; };
+		D12CF04F29B9C04A00C5319C /* UrlModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlModels.swift; sourceTree = "<group>"; };
 		D15AF8A429B8279600999DBA /* SettingViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModels.swift; sourceTree = "<group>"; };
 		D15AF8A729B82A3E00999DBA /* BaseApiRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseApiRepository.swift; sourceTree = "<group>"; };
 		D187820D29A628810085B86F /* WebView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WebView.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -92,6 +94,14 @@
 				D112957629AF29E500E262FA /* Localizable(Vie).strings */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		D12CF04E29B9C02B00C5319C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D12CF04F29B9C04A00C5319C /* UrlModels.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		D15AF8A329B8276C00999DBA /* ViewModels */ = {
@@ -157,6 +167,7 @@
 		D1D485F629B5884800C47B72 /* MVVM */ = {
 			isa = PBXGroup;
 			children = (
+				D12CF04E29B9C02B00C5319C /* Models */,
 				D15AF8A629B829F300999DBA /* Repositories */,
 				D1D485F829B5885B00C47B72 /* Screen */,
 				D1D485F729B5885900C47B72 /* Views */,
@@ -385,6 +396,7 @@
 				D1ECB35D29B6081F005F755D /* UrlTableViewCell.swift in Sources */,
 				D187821129A628810085B86F /* AppDelegate.swift in Sources */,
 				D1ECB36629B6D727005F755D /* SettingViewController.swift in Sources */,
+				D12CF05029B9C04A00C5319C /* UrlModels.swift in Sources */,
 				D15AF8A529B8279600999DBA /* SettingViewModels.swift in Sources */,
 				D187821329A628810085B86F /* SceneDelegate.swift in Sources */,
 				D1D8CF2829B86A5000BC57D6 /* UrlDetailViewController.swift in Sources */,
