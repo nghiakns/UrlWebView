@@ -9,7 +9,7 @@
 import UIKit
 import DropDown
 
-class UrlDetailViewController: UIViewController {
+class UrlDetailViewController: UIViewController, didSeclectImage {
 
     @IBOutlet weak var imageDropDownI: UIImageView!
     @IBOutlet weak var dropDownDomainButton: UIButton!
@@ -23,16 +23,23 @@ class UrlDetailViewController: UIViewController {
     @IBOutlet weak var dropDownHomeButton: UIButton!
     @IBOutlet weak var imageHome: UIImageView!
     @IBOutlet weak var domainView: UIView!
+    @IBOutlet weak var iconImage: UIImageView!
     let DropdownDomain = DropDown()
     let DropdownHome = DropDown()
-    
+//    let deldegate = AlertIconViewController()
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
+//        deldegate.delegate = self
         imageDropDownI.setImageColor(color: UIColor(red: 150/255, green: 150/255, blue: 150/255, alpha: 1))
         imageHome.setImageColor(color: UIColor(red: 150/255, green: 150/255, blue: 150/255, alpha: 1))
         // Do any additional setup after loading the view.
     }
+    
+    func didSeclectImage(image: UIImage) {
+        self.iconImage.image = image
+    }
+    
     private func configure() {
         DropdownDomain.anchorView = dropDownDomainButton
         DropdownDomain.dataSource = DropdownData.inspectionTimes
@@ -90,6 +97,11 @@ class UrlDetailViewController: UIViewController {
         DropdownDomain.show()
     }
     
+    @IBAction func AlertTapButton(_ sender: Any) {
+        guard let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AlertIconViewController") as? AlertIconViewController else { return }
+        vc.delegate = self
+                self.navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 
