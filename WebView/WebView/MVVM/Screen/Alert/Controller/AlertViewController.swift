@@ -36,4 +36,8 @@ class AlertViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func AlertTapButton(_ sender: Any) {
+//        guard let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AlertIconViewController") as? AlertIconViewController else { return }
+//        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }
