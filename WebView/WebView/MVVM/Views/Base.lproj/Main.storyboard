@@ -383,6 +383,9 @@
                                                 <state key="normal" title="THÊM">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="didTapAddUrl:" destination="l4p-zB-cQG" eventType="touchUpInside" id="eJW-ac-tx3"/>
+                                                </connections>
                                             </button>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rta-7d-WLo">
                                                 <rect key="frame" x="345" y="523" width="51" height="31"/>
@@ -568,7 +571,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="IPDomainTextField" destination="STH-Cz-H0B" id="wrQ-sX-RRS"/>
                         <outlet property="IPView" destination="Bbi-py-JO9" id="Rtz-zn-ELu"/>
+                        <outlet property="SwitchAutoLoadUrl" destination="Rta-7d-WLo" id="yv7-0O-TiI"/>
                         <outlet property="accTextfield" destination="aeO-vS-TKa" id="oQv-EG-0JS"/>
                         <outlet property="addButton" destination="fhh-j2-2Rg" id="8K8-23-gz7"/>
                         <outlet property="domainView" destination="6gD-4T-Ohk" id="Be4-XS-8ng"/>
@@ -924,15 +929,15 @@
         </scene>
     </scenes>
     <resources>
-        <image name="arrowtriangle.down.fill" catalog="system" width="128" height="124"/>
-        <image name="chevron.left" catalog="system" width="96" height="128"/>
+        <image name="arrowtriangle.down.fill" catalog="system" width="128" height="120"/>
+        <image name="chevron.left" catalog="system" width="97" height="128"/>
         <image name="icons8-add-99" width="99" height="99"/>
         <image name="icons8-info-78" width="78" height="78"/>
         <image name="login" width="209" height="209"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
-        <image name="rectangle.portrait.and.arrow.right" catalog="system" width="128" height="108"/>
+        <image name="rectangle.portrait.and.arrow.right" catalog="system" width="128" height="109"/>
         <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

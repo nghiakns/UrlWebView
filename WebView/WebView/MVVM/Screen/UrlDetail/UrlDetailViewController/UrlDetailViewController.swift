@@ -14,6 +14,7 @@ class UrlDetailViewController: UIViewController, didSeclectImage {
     @IBOutlet weak var imageDropDownI: UIImageView!
     @IBOutlet weak var dropDownDomainButton: UIButton!
     @IBOutlet weak var IPView: UIView!
+    @IBOutlet weak var IPDomainTextField: UITextField!
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var paramTextfield: UITextField!
     @IBOutlet weak var homeView: UIView!
@@ -24,8 +25,26 @@ class UrlDetailViewController: UIViewController, didSeclectImage {
     @IBOutlet weak var imageHome: UIImageView!
     @IBOutlet weak var domainView: UIView!
     @IBOutlet weak var iconImage: UIImageView!
+    @IBOutlet weak var SwitchAutoLoadUrl: UISwitch!
     let DropdownDomain = DropDown()
     let DropdownHome = DropDown()
+    let urlSevices = ModelSevices()
+    var imageIcon: UIImage?
+    @IBAction func didTapAddUrl(_ sender: Any) {
+        if !paramTextfield.state.isEmpty || !passTextField.state.isEmpty{
+            print("❤️")
+        } else {
+            let data = imageIcon
+            let convertImage = data?.jpegData(compressionQuality: 1)?.base64EncodedString() ?? ""
+            let task = ModelsUrl(domain: IPDomainTextField.text, protocols: "https", name: nameTextfield.text, user: accTextfield.text, password: passTextField.text,icon:convertImage, autoLoad: true, autoLoadPage: nil, params: paramTextfield.text, url: nil)
+            do {
+                try urlSevices.saveTask(task: task)
+                self.navigationController?.popViewController(animated: true)
+            } catch let error{
+                print(error)
+            }
+        }
+    }
 //    let deldegate = AlertIconViewController()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +57,7 @@ class UrlDetailViewController: UIViewController, didSeclectImage {
     
     func didSeclectImage(image: UIImage) {
         self.iconImage.image = image
+        imageIcon = image
     }
     
     private func configure() {
@@ -87,6 +107,7 @@ class UrlDetailViewController: UIViewController, didSeclectImage {
         let UIStoryBoard = UIStoryboard(name: "Main", bundle: nil)
         guard let VC = UIStoryBoard.instantiateViewController(withIdentifier: "UrlDetailViewController") as? UrlDetailViewController else { return }
         VC.modalPresentationStyle = .fullScreen
+        
         self.navigationController?.popViewController(animated: true)
     }
     
@@ -102,6 +123,7 @@ class UrlDetailViewController: UIViewController, didSeclectImage {
         vc.delegate = self
                 self.navigationController?.pushViewController(vc, animated: true)
     }
+    
 }
 
 

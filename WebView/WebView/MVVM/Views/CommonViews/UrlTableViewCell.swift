@@ -10,6 +10,8 @@ import UIKit
 class UrlTableViewCell: UITableViewCell {
     
     @IBOutlet weak var viewCell: UIView!
+    @IBOutlet weak var domainUrlUILabel: UILabel!
+    @IBOutlet weak var iconUrlImageView: UIImageView!
     static let identifier = "UrlTableViewCell"
     static var nib = UINib(nibName: identifier, bundle: nil)
 
