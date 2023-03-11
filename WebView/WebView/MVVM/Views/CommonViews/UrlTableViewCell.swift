@@ -10,10 +10,11 @@ import UIKit
 class UrlTableViewCell: UITableViewCell {
     
     @IBOutlet weak var viewCell: UIView!
-    @IBOutlet weak var domainUrlUILabel: UILabel!
+    @IBOutlet weak var name: UILabel!
     @IBOutlet weak var iconUrlImageView: UIImageView!
     static let identifier = "UrlTableViewCell"
     static var nib = UINib(nibName: identifier, bundle: nil)
+    var didClickEditButton: (() -> Void)?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,4 +29,8 @@ class UrlTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    @IBAction func editUrlButton(_ sender: Any) {
+        didClickEditButton?()
+    }
+
 }

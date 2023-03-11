@@ -57,7 +57,7 @@ class SettingViewController: UIViewController {
     }
     
     @IBAction func backButton(_ sender: Any) {
-        self.navigationController?.popToRootViewController(animated: true)
+        self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func logoutButton(_ sender: Any) {
@@ -65,14 +65,14 @@ class SettingViewController: UIViewController {
     }
     
     @IBAction func cancelButton(_ sender: Any) {
-        self.navigationController?.popToRootViewController(animated: true)
+        self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func nextButton(_ sender: Any) {
         let phoneName = UIDevice.current.name
         let model = UIDevice.current.model
         let uID = UIDevice.current.identifierForVendor?.uuidString ?? ""
-        viewmodel.login(email: emailTxtField.text ?? "", password: passwordTxtField.text ?? "", language: "vie", phoneName: phoneName, uID: uID, model: model)
+        viewmodel.login(email: emailTxtField.text ?? "", password: passwordTxtField.text ?? "", language: dropDown.textInputContextIdentifier, phoneName: phoneName, uID: uID, model: model)
         self.navigationController?.popToRootViewController(animated: true)
     }
     
