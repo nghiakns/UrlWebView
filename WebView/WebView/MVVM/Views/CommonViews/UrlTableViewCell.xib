@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -41,6 +40,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain"/>
+                                <connections>
+                                    <action selector="editUrlButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Sa2-D4-KKu"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_baseline_settings_24" translatesAutoresizingMaskIntoConstraints="NO" id="5mE-HH-FHA">
                                 <rect key="frame" x="341" y="15" width="32" height="32"/>
@@ -74,8 +76,8 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="domainUrlUILabel" destination="CTz-cr-039" id="Hpg-oa-DOm"/>
                 <outlet property="iconUrlImageView" destination="GIw-2k-afW" id="qx6-AO-ff1"/>
+                <outlet property="name" destination="CTz-cr-039" id="bsZ-UB-SpQ"/>
                 <outlet property="viewCell" destination="FyG-tx-nGN" id="VQg-zh-haK"/>
             </connections>
             <point key="canvasLocation" x="191.30434782608697" y="110.49107142857143"/>

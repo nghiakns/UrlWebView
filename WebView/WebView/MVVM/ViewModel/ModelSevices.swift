@@ -22,4 +22,11 @@ class ModelSevices {
         let data = try JSONEncoder().encode(tasks)
         UserDefaults.standard.set(data, forKey: "UrlKey")
     }
+    
+    func removeTask(task: ModelsUrl, index: Int) throws {
+        var tasks = try getTask()
+        tasks.remove(at: index)
+        let data = try JSONEncoder().encode(tasks)
+        UserDefaults.standard.set(data, forKey: "UrlKey")
+    }
 }

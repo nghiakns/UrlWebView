@@ -96,11 +96,30 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: UrlTableViewCell.identifier, for: indexPath) as? UrlTableViewCell else { return UITableViewCell() }
-        cell.domainUrlUILabel.text = tasks[indexPath.row].domain
+        cell.name.text = tasks[indexPath.row].name
         let image = tasks[indexPath.row].icon ?? ""
-        if let decodedData = Data(base64Encoded: image, options: .ignoreUnknownCharacters) {
-            let image = UIImage(data: decodedData)
-            cell.iconUrlImageView.image = image
+        if !image.isEmpty {
+            if let decodedData = Data(base64Encoded: image, options: .ignoreUnknownCharacters) {
+                cell.iconUrlImageView.image = UIImage(data: decodedData)
+            } else {
+                cell.iconUrlImageView.image = UIImage(named: "logo_gmt")
+            }
+        } else {
+            cell.iconUrlImageView.image = UIImage(named: "logo_gmt")
+        }
+//        let image = tasks[indexPath.row].icon ?? ""
+//        if let decodedData = Data(base64Encoded: image, options: .ignoreUnknownCharacters) {
+//            let image = UIImage(data: decodedData)
+//            cell.iconUrlImageView.image = image
+//        } else {
+//            cell.iconUrlImageView.image = UIImage(named: "logo_gmt")
+//        }
+        cell.didClickEditButton = { 
+            guard let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "UrlDetailViewController") as? UrlDetailViewController else { return }
+            vc.model = self.tasks
+            vc.index = indexPath.row
+//            vc.fillData(data: self.tasks)
+            self.navigationController?.pushViewController(vc, animated: true)
         }
         return cell
     }
@@ -114,9 +133,12 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let myURL = URL(string: tasks[indexPath.row].domain ?? "")
-              let myRequest = URLRequest(url: myURL!)
-              webView.load(myRequest)
+        guard let myURL = URL(string: tasks[indexPath.row].domain ?? "") else { return }
+        if UIApplication.shared.canOpenURL(myURL) {
+            UIApplication.shared.open(myURL)
+        } else {
+            print("err url")
+        }
     }
 }
 

@@ -31,13 +31,28 @@ var imageModel: [ImageModel] = [
 class AlertIconViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
    
     @IBOutlet weak var IconImageCollection: UICollectionView!
+    @IBOutlet weak var alertView: UIView!
+    @IBOutlet weak var closeButton: UIButton!
     var delegate: didSeclectImage?
     var index: Int?
     override func viewDidLoad() {
         super.viewDidLoad()
+        config()
+        configCollectionView()
+    }
+    
+    func configCollectionView() {
         IconImageCollection.delegate = self
         IconImageCollection.dataSource = self
         IconImageCollection.register( AlertIconCollectionViewCell.NibName, forCellWithReuseIdentifier: AlertIconCollectionViewCell.identifier)
+    }
+    
+    func config() {
+        alertView.layer.cornerRadius = 5
+        alertView.layer.borderWidth = 2
+        alertView.layer.borderColor = CGColor(red: 76/255, green: 76/255, blue: 76/255, alpha: 1)
+        closeButton.layer.cornerRadius = 5
+        closeButton.tintColor = ResourceColor.headerView
     }
     
 //    override func systemLayoutSizeFitting(_ targetSize: CGSize, withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority, verticalFittingPriority: UILayoutPriority) -> CGSize {
@@ -63,7 +78,7 @@ class AlertIconViewController: UIViewController, UICollectionViewDelegate, UICol
             return
         }
         delegate.didSeclectImage(image: imageModel[indexPath.row].noName ?? UIImage())
-        self.navigationController?.popViewController(animated: true)
+        self.dismiss(animated: true)
     }
     
 //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -87,7 +102,7 @@ class AlertIconViewController: UIViewController, UICollectionViewDelegate, UICol
 //                }
 //        delegate.didSeclectImage(image: imageModel[index ?? 0].noName ?? UIImage())
         
-        self.navigationController?.popViewController(animated: true)
+        self.dismiss(animated: true, completion: nil)
     }
     
     
