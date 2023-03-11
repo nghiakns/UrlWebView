@@ -72,7 +72,7 @@ class SettingViewController: UIViewController {
         let phoneName = UIDevice.current.name
         let model = UIDevice.current.model
         let uID = UIDevice.current.identifierForVendor?.uuidString ?? ""
-        viewmodel.login(email: emailTxtField.text ?? "", password: passwordTxtField.text ?? "", language: dropDown.textInputContextIdentifier, phoneName: phoneName, uID: uID, model: model)
+        viewmodel.login(email: emailTxtField.text ?? "", password: passwordTxtField.text ?? "", language: dropDown.textInputContextIdentifier ?? "", phoneName: phoneName, uID: uID, model: model)
         self.navigationController?.popToRootViewController(animated: true)
     }
     
