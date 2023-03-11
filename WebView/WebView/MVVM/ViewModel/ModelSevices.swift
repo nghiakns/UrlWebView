@@ -18,7 +18,6 @@ class ModelSevices {
     func saveTask(task: ModelsUrl) throws {
         var tasks = try getTask()
         tasks.append(task)
-        
         let data = try JSONEncoder().encode(tasks)
         UserDefaults.standard.set(data, forKey: "UrlKey")
     }

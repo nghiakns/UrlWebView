@@ -19,11 +19,13 @@ class HomeViewController: UIViewController, WKUIDelegate{
     var taskSevices = ModelSevices()
     var tasks:[ModelsUrl] = []
     var webView: WKWebView!
+    var isAutoload = UserDefaults.standard.integer(forKey: HAUserDefault.kAutoLoad) == 2 ? true : false
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         config()
         configTableView()
+        print(isAutoload)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -133,9 +135,14 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let myURL = URL(string: tasks[indexPath.row].domain ?? "") else { return }
+        let protocols = tasks[indexPath.row].protocols ?? ""
+        let IPDomain = tasks[indexPath.row].domain ?? ""
+        let subDomain = String("://www.")
+        guard let myURL = URL(string: protocols + subDomain + IPDomain ) else { return }
         if UIApplication.shared.canOpenURL(myURL) {
-            UIApplication.shared.open(myURL)
+            if isAutoload {
+                UIApplication.shared.open(myURL)
+            }
         } else {
             print("err url")
         }

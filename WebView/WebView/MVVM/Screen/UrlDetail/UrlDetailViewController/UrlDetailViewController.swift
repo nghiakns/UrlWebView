@@ -8,7 +8,9 @@
 
 import UIKit
 import DropDown
-
+enum SettingMode: Int {
+    case autoload
+}
 class UrlDetailViewController: UIViewController, didSeclectImage {
 
     @IBOutlet weak var imageDropDownI: UIImageView!
@@ -85,10 +87,16 @@ class UrlDetailViewController: UIViewController, didSeclectImage {
             self?.dropDownDomainButton.setTitle(item, for: .normal)
             HAUserDefault.saveCountDownIntervalTime(intervalTime: item.getDomain())
         }
+        DropdownDomain.bottomOffset = CGPoint(x: 0, y: dropDownDomainButton.bounds.height)
+        dropDownHomeButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 0)
         DropdownHome.selectionAction = { [weak self] (index: Int, item: String) in
             self?.dropDownHomeButton.setTitle(item, for: .normal)
             HAUserDefault.saveCountDownIntervalTime(intervalTime: item.getHome())
         }
+        DropdownHome.bottomOffset = CGPoint(x: 0, y: dropDownHomeButton.bounds.height)
+        
+        let isAutoLoad = HAUserDefault.getSettingWith(key: HAUserDefault.kAutoLoad)
+        SwitchAutoLoadUrl.isOn = isAutoLoad
     }
     
     func configEditController() {
@@ -128,13 +136,20 @@ class UrlDetailViewController: UIViewController, didSeclectImage {
     @IBAction func didTapAddUrl(_ sender: Any) {
         let domainTextField = IPDomainTextField.text?.isEmpty ?? true
         let nameTextField = nameTextfield.text?.isEmpty ?? true
+        let protocols = DropdownDomain.selectedItem
+        let user = accTextfield.text
+        let password = passTextField.text
+        let params = paramTextfield.text
         if deleteButton.isHidden {
-            if domainTextField || nameTextField {
-                print("fill info")
+            if domainTextField || nameTextField || (protocols == nil) || (user == nil) || (password == nil) || (params == nil) {
+                let alert = UIAlertController(title: "Thông Báo", message: "Bạn còn chưa điền đầy đủ hết thông tin, bạn hay" , preferredStyle: .alert)
+                let defaultAction: UIAlertAction = UIAlertAction(title: "ok".localized, style: .default, handler:nil)
+                alert.addAction(defaultAction)
+                self.present(alert, animated: true)
             } else {
                 let data = imageIcon
                 let convertImage = data?.jpegData(compressionQuality: 1)?.base64EncodedString() ?? ""
-                let task = ModelsUrl(domain: IPDomainTextField.text, protocols: DropdownDomain.textInputContextIdentifier, name: nameTextfield.text, user: accTextfield.text, password: passTextField.text, icon: convertImage, autoLoad: SwitchAutoLoadUrl.isOn, autoLoadPage: nil, params: paramTextfield.text, url: nil)
+                let task = ModelsUrl(domain: IPDomainTextField.text, protocols: DropdownDomain.selectedItem, name: nameTextfield.text, user: accTextfield.text, password: passTextField.text, icon: convertImage, autoLoad: SwitchAutoLoadUrl.isOn, autoLoadPage: nil, params: paramTextfield.text, url: nil)
                 do {
                     try urlSevices.saveTask(task: task)
                     self.navigationController?.popViewController(animated: true)
@@ -148,6 +163,14 @@ class UrlDetailViewController: UIViewController, didSeclectImage {
         
     }
     
+    @IBAction func switchDidChangeValue(_ sender: Any) {
+        switch (sender as AnyObject).tag {
+        case SettingMode.autoload.rawValue:
+            HAUserDefault.saveSettingWith(key: HAUserDefault.kAutoLoad, value: (sender as AnyObject).isOn ? 2 : 1)
+        default:
+            break
+        }
+    }
     @IBAction func PodViewHomeTapButton(_ sender: Any) {
         let UIStoryBoard = UIStoryboard(name: "Main", bundle: nil)
         guard let VC = UIStoryBoard.instantiateViewController(withIdentifier: "UrlDetailViewController") as? UrlDetailViewController else { return }
