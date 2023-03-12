@@ -19,15 +19,13 @@ class HomeViewController: UIViewController, WKUIDelegate{
     var taskSevices = ModelSevices()
     var tasks:[ModelsUrl] = []
     var webView: WKWebView!
-    var isAutoload = UserDefaults.standard.integer(forKey: HAUserDefault.kAutoLoad) == 2 ? true : false
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         config()
         configTableView()
-        print(isAutoload)
+        autoLoad()
     }
-    
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         tableview.delegate = self
@@ -40,24 +38,19 @@ class HomeViewController: UIViewController, WKUIDelegate{
         }
     }
     
-//    override func loadView() {
-//          let webConfiguration = WKWebViewConfiguration()
-//          webView = WKWebView(frame: .zero, configuration: webConfiguration)
-//          webView.uiDelegate = self
-//          view = webView
-//       }
-//
-    override func viewDidDisappear(_ animated: Bool) {
-        self.view.alpha = 1
+    func autoLoad() {
+        let autoLoad = tasks.filter({ $0.autoLoad == true})
+        if !autoLoad.isEmpty {
+            guard let url = URL(string: autoLoad[0].url ?? "") else { return }
+            if UIApplication.shared.canOpenURL(url) {
+                UIApplication.shared.open(url)
+            } else {
+                print("err url")
+            }
+        }
     }
+    
     func config() {
-//        infoImage.backgroundColor = ResourceColor.headerView
-//        addImage.backgroundColor = ResourceColor.headerView
-//        infoImage.layer.cornerRadius = infoImage.frame.width / 2
-//        infoImage.tintColor = ResourceColor.headerView
-//        addImage.tintColor = ResourceColor.headerView
-//        infoImage.setImageColor(color: ResourceColor.headerView)
-//        addImage.setImageColor(color: ResourceColor.headerView)
         headerView.backgroundColor = ResourceColor.headerView
         homeTitle.text = "Home"
         homeTitle.textColor = .white
@@ -68,6 +61,12 @@ class HomeViewController: UIViewController, WKUIDelegate{
         tableview.delegate = self
         tableview.dataSource = self
         tableview.separatorStyle = .none
+        do{
+            tasks = try taskSevices.getTask()
+            tableview.reloadData()
+        } catch let error{
+            print(error.localizedDescription)
+        }
     }
     
     @IBAction func infoButton(_ sender: Any) {
@@ -109,40 +108,23 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         } else {
             cell.iconUrlImageView.image = UIImage(named: "logo_gmt")
         }
-//        let image = tasks[indexPath.row].icon ?? ""
-//        if let decodedData = Data(base64Encoded: image, options: .ignoreUnknownCharacters) {
-//            let image = UIImage(data: decodedData)
-//            cell.iconUrlImageView.image = image
-//        } else {
-//            cell.iconUrlImageView.image = UIImage(named: "logo_gmt")
-//        }
         cell.didClickEditButton = { 
             guard let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "UrlDetailViewController") as? UrlDetailViewController else { return }
             vc.model = self.tasks
             vc.index = indexPath.row
-//            vc.fillData(data: self.tasks)
             self.navigationController?.pushViewController(vc, animated: true)
         }
         return cell
     }
-    
-//    func numberOfSections(in tableView: UITableView) -> Int {
-//        return 1
-//    }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let protocols = tasks[indexPath.row].protocols ?? ""
-        let IPDomain = tasks[indexPath.row].domain ?? ""
-        let subDomain = String("://www.")
-        guard let myURL = URL(string: protocols + subDomain + IPDomain ) else { return }
-        if UIApplication.shared.canOpenURL(myURL) {
-            if isAutoload {
-                UIApplication.shared.open(myURL)
-            }
+        guard let url = URL(string: tasks[indexPath.row].url ?? "") else { return }
+        if UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url)
         } else {
             print("err url")
         }
