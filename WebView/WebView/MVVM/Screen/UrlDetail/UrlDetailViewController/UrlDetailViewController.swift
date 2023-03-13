@@ -86,13 +86,13 @@ class UrlDetailViewController: UIViewController, didSeclectImage {
         dropDownDomainButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 0)
         DropdownDomain.selectionAction = { [weak self] (index: Int, item: String) in
             self?.dropDownDomainButton.setTitle(item, for: .normal)
-            HAUserDefault.saveCountDownIntervalTime(intervalTime: item.getDomain())
+            HAUserDefault.saveDropdownProtocols(item: item.getDomain())
         }
         DropdownDomain.bottomOffset = CGPoint(x: 0, y: dropDownDomainButton.bounds.height)
         dropDownHomeButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 0)
         DropdownHome.selectionAction = { [weak self] (index: Int, item: String) in
             self?.dropDownHomeButton.setTitle(item, for: .normal)
-            HAUserDefault.saveCountDownIntervalTime(intervalTime: item.getHome())
+            HAUserDefault.saveDropdownHome(item: item.getHome())
         }
         DropdownHome.bottomOffset = CGPoint(x: 0, y: dropDownHomeButton.bounds.height)
     }
@@ -104,11 +104,41 @@ class UrlDetailViewController: UIViewController, didSeclectImage {
             deleteImage.isHidden = false
             deleteButton.isHidden = false
             IPDomainTextField.text = self.model[index].domain ?? ""
+            if let protocols = self.model[index].protocols {
+                switch protocols {
+                case "http":
+                    DropdownDomain.selectRow(0)
+                case "https":
+                    DropdownDomain.selectRow(1)
+                case "rtsp":
+                    DropdownDomain.selectRow(2)
+                default:
+                    dropDownDomainButton.setTitle(self.model[index].protocols ?? "-", for: .normal)
+                }
+            }
             dropDownDomainButton.setTitle(self.model[index].protocols ?? "-", for: .normal)
             nameTextfield.text = self.model[index].name ?? ""
             accTextfield.text = self.model[index].user ?? ""
             passTextField.text = self.model[index].password ?? ""
             SwitchAutoLoadUrl.isOn = self.model[index].autoLoad ?? false
+            if let autoLoadPage = self.model[index].autoLoadPage {
+                switch autoLoadPage {
+                case "Touch":
+                    DropdownHome.selectRow(0)
+                case "Scada-Vis":
+                    DropdownHome.selectRow(1)
+                case "Schedulers":
+                    DropdownHome.selectRow(2)
+                case "Mosaic":
+                    DropdownHome.selectRow(3)
+                case "Assistant":
+                    DropdownHome.selectRow(4)
+                case "Premium":
+                    DropdownHome.selectRow(5)
+                default:
+                    dropDownHomeButton.setTitle(self.model[index].autoLoadPage ?? "-", for: .normal)
+                }
+            }
             dropDownHomeButton.setTitle(self.model[index].autoLoadPage ?? "", for: .normal)
             paramTextfield.text = self.model[index].params ?? ""
             let image = self.model[index].icon ?? ""
@@ -139,7 +169,7 @@ class UrlDetailViewController: UIViewController, didSeclectImage {
         let convertImage = data?.jpegData(compressionQuality: 1)?.base64EncodedString() ?? ""
         let protocols = DropdownDomain.selectedItem ?? ""
         let IPDomain = IPDomainTextField.text ?? ""
-        let subDomain = String("://www.")
+        let subDomain = String("://")
         let url = protocols + subDomain + IPDomain
         if deleteButton.isHidden {
             if domainTextField == "" || nameTextField == ""  {
