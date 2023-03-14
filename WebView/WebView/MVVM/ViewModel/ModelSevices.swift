@@ -15,8 +15,15 @@ class ModelSevices {
         return try JSONDecoder.init().decode([ModelsUrl].self, from: tasks)
     }
     
-    func saveTask(task: ModelsUrl) throws {
+    func saveTask(task: ModelsUrl, isAutoLoad: Bool) throws {
         var tasks = try getTask()
+        if isAutoLoad {
+            let autoLoads = tasks.filter({ $0.autoLoad == true})
+            for autoLoad in autoLoads {
+                autoLoad.autoLoad = false
+            }
+            task.autoLoad = true
+        }
         tasks.append(task)
         let data = try JSONEncoder().encode(tasks)
         UserDefaults.standard.set(data, forKey: "UrlKey")
@@ -25,6 +32,20 @@ class ModelSevices {
     func removeTask(task: ModelsUrl, index: Int) throws {
         var tasks = try getTask()
         tasks.remove(at: index)
+        let data = try JSONEncoder().encode(tasks)
+        UserDefaults.standard.set(data, forKey: "UrlKey")
+    }
+    
+    func editTask(task: ModelsUrl, index: Int, isAutoLoad: Bool) throws {
+        var tasks = try getTask()
+        if isAutoLoad {
+            let autoLoads = tasks.filter({ $0.autoLoad == true})
+            for autoLoad in autoLoads {
+                autoLoad.autoLoad = false
+            }
+            task.autoLoad = true
+        }
+        tasks[index] = task
         let data = try JSONEncoder().encode(tasks)
         UserDefaults.standard.set(data, forKey: "UrlKey")
     }

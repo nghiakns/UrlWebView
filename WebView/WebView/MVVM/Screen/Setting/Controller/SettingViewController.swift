@@ -23,9 +23,12 @@ class SettingViewController: UIViewController {
     @IBOutlet weak var languageDropdownView: UIView!
     @IBOutlet weak var languageDropdownImage: UIImageView!
     @IBOutlet weak var dropDownButton: UIButton!
-    let dropDown = DropDown()
     
+    let dropDown = DropDown()
     let viewmodel = SettingViewModels()
+    let phoneName = UIDevice.current.name
+    let model = UIDevice.current.model
+    let uID = UIDevice.current.identifierForVendor?.uuidString ?? ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +44,7 @@ class SettingViewController: UIViewController {
         dropDownButton.layer.masksToBounds = true
         dropDown.selectionAction = { [weak self] (index: Int, item: String) in
             self?.dropDownButton.setTitle(item, for: .normal)
-            HAUserDefault.saveCountDownIntervalTime(intervalTime: item.getLanguage())
+            HAUserDefault.saveDropdownLanguage(item: item.getLanguage())
         }
 
         languageDropdownImage.setImageColor(color: UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 1))
@@ -61,6 +64,9 @@ class SettingViewController: UIViewController {
     }
     
     @IBAction func logoutButton(_ sender: Any) {
+        viewmodel.logout(eventHandle: EventHandle.logout.getEventHandle(), email: emailTxtField.text ?? "", language: dropDown.selectedItem ?? "", phoneName: phoneName, uID: uID, model: model)
+        emailTxtField.text = ""
+        passwordTxtField.text = ""
         self.navigationController?.popToRootViewController(animated: true)
     }
     
@@ -69,14 +75,12 @@ class SettingViewController: UIViewController {
     }
     
     @IBAction func nextButton(_ sender: Any) {
-        let phoneName = UIDevice.current.name
-        let model = UIDevice.current.model
-        let uID = UIDevice.current.identifierForVendor?.uuidString ?? ""
-        viewmodel.login(email: emailTxtField.text ?? "", password: passwordTxtField.text ?? "", language: dropDown.textInputContextIdentifier ?? "", phoneName: phoneName, uID: uID, model: model)
-        self.navigationController?.popToRootViewController(animated: true)
+        viewmodel.login(eventHandle: EventHandle.login.getEventHandle(), email: emailTxtField.text ?? "", password: passwordTxtField.text ?? "", language: dropDown.selectedItem ?? "", phoneName: phoneName, uID: uID, model: model)
+        self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func resetPassword(_ sender: Any) {
+        viewmodel.resetPassword(eventHandle: EventHandle.resetPassword.getEventHandle(), email: emailTxtField.text ?? "", phoneName: phoneName, uID: uID, model: model)
         self.navigationController?.popToRootViewController(animated: true)
     }
     

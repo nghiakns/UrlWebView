@@ -16,7 +16,6 @@ struct DropdownData {
     ]
     
     static let homeDropDown = [
-        "-".localized,
         "Touch".localized,
         "Scada-Vis".localized,
         "Schedulers".localized,
