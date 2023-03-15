@@ -8,12 +8,54 @@
 import Foundation
 import Alamofire
 
-//class SettingViewModels {
-//    func login(cm: String, email: String, password: String, language: String, phoneName: String, model: String, uID: String, language: String) {
-//        let url = BaseApiRespositories.url
-//        let params = ["cm": cm,
-//                      "email": email,
-//                      "language": language,
-//        ]
-//    }
-//}
+class SettingViewModels {
+    func login(eventHandle: String, email: String, password: String, language: String, phoneName: String, uID: String, model: String, completion: @escaping (_ isSuccess: Bool, _ mess: String) -> Void) ->Void {
+        let url = BaseApiRespositories.url
+        if !email.isEmpty && !password.isEmpty {
+            let params = ["cm": eventHandle,
+                          "email": email,
+                          "password": password,
+                          "language": language,
+                          "phonename": phoneName,
+                          "uID": uID,
+                          "model": model
+            ] as [String : Any]
+            AF.request(url, method: .get, parameters: params).responseData { res in
+                if let data = res.data {
+                    let json = String(data: data, encoding: String.Encoding.utf8) ?? ""
+                    let isSuccess = json.lowercased().contains("welcomergok") ?? false
+                    completion(isSuccess, json)
+                }
+            }
+        } else {
+            completion(false, "change language")
+        }
+    }
+    
+    func logout(eventHandle: String, email: String, language: String, phoneName: String, uID: String, model: String) {
+        let url = BaseApiRespositories.url
+        let params = ["cm": eventHandle,
+                      "email": email,
+                      "language": language,
+                      "phonename": phoneName,
+                      "uID": uID,
+                      "model": model
+        ] as [String : Any]
+        AF.request(url, method: .get, parameters: params).responseData { res in
+            print(res.response?.statusCode)
+        }
+    }
+    
+    func resetPassword(eventHandle: String, email: String, phoneName: String, uID: String, model: String) {
+        let url = BaseApiRespositories.url
+        let params = ["cm": eventHandle,
+                      "email": email,
+                      "phonename": phoneName,
+                      "uID": uID,
+                      "model": model
+        ] as [String : Any]
+        AF.request(url, method: .get, parameters: params).responseData { res in
+            print(res.response?.statusCode)
+        }
+    }
+}

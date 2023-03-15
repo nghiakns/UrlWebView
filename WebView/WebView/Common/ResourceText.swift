@@ -66,6 +66,8 @@ enum ResourceText: String {
     }
 }
 
+
+//
 extension String {
     
     var localized: String {
@@ -93,6 +95,17 @@ extension String {
             return 2
         case "rtsp".localized:
             return 3
+        default:
+            return 0
+        }
+    }
+    
+    func getLanguage() -> Double {
+        switch self {
+        case "Tiếng Việt".localized:
+            return 1
+        case "English".localized:
+            return 2
         default:
             return 0
         }

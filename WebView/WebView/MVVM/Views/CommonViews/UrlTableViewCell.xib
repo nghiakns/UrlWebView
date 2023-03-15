@@ -20,8 +20,8 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FyG-tx-nGN">
                         <rect key="frame" x="7" y="7" width="388" height="62"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square.and.arrow.up.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="GIw-2k-afW">
-                                <rect key="frame" x="10" y="10.5" width="42" height="41"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_gmt" translatesAutoresizingMaskIntoConstraints="NO" id="GIw-2k-afW">
+                                <rect key="frame" x="10" y="10" width="42" height="42"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="GIw-2k-afW" secondAttribute="height" id="li2-BZ-iOr"/>
                                 </constraints>
@@ -40,17 +40,27 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain"/>
+                                <connections>
+                                    <action selector="editUrlButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Sa2-D4-KKu"/>
+                                </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_baseline_settings_24" translatesAutoresizingMaskIntoConstraints="NO" id="5mE-HH-FHA">
+                                <rect key="frame" x="341" y="15" width="32" height="32"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6zr-pg-wyJ" firstAttribute="centerY" secondItem="FyG-tx-nGN" secondAttribute="centerY" id="7KO-G7-4nz"/>
                             <constraint firstItem="6zr-pg-wyJ" firstAttribute="top" secondItem="FyG-tx-nGN" secondAttribute="top" constant="15" id="LLs-dx-dUS"/>
+                            <constraint firstItem="5mE-HH-FHA" firstAttribute="bottom" secondItem="6zr-pg-wyJ" secondAttribute="bottom" id="Qew-pN-6gL"/>
                             <constraint firstAttribute="bottom" secondItem="6zr-pg-wyJ" secondAttribute="bottom" constant="15" id="R1F-Fs-S2G"/>
                             <constraint firstItem="CTz-cr-039" firstAttribute="leading" secondItem="GIw-2k-afW" secondAttribute="trailing" constant="15" id="XKs-V0-GXw"/>
                             <constraint firstItem="GIw-2k-afW" firstAttribute="centerY" secondItem="FyG-tx-nGN" secondAttribute="centerY" id="ZWp-Il-mVZ"/>
+                            <constraint firstItem="5mE-HH-FHA" firstAttribute="leading" secondItem="6zr-pg-wyJ" secondAttribute="leading" id="ZiF-Wh-QLv"/>
                             <constraint firstItem="CTz-cr-039" firstAttribute="centerY" secondItem="FyG-tx-nGN" secondAttribute="centerY" id="gU7-uD-a2S"/>
+                            <constraint firstItem="5mE-HH-FHA" firstAttribute="trailing" secondItem="6zr-pg-wyJ" secondAttribute="trailing" id="h1q-JL-MPX"/>
                             <constraint firstItem="GIw-2k-afW" firstAttribute="top" secondItem="FyG-tx-nGN" secondAttribute="top" constant="10" id="hm9-Wl-eDT"/>
+                            <constraint firstItem="5mE-HH-FHA" firstAttribute="top" secondItem="6zr-pg-wyJ" secondAttribute="top" id="hzi-GO-N2J"/>
                             <constraint firstAttribute="bottom" secondItem="GIw-2k-afW" secondAttribute="bottom" constant="10" id="iyq-Lh-fuN"/>
                             <constraint firstAttribute="trailing" secondItem="6zr-pg-wyJ" secondAttribute="trailing" constant="15" id="mTD-VM-Sgj"/>
                             <constraint firstItem="GIw-2k-afW" firstAttribute="leading" secondItem="FyG-tx-nGN" secondAttribute="leading" constant="10" id="nZn-s6-31x"/>
@@ -66,13 +76,16 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="iconUrlImageView" destination="GIw-2k-afW" id="qx6-AO-ff1"/>
+                <outlet property="name" destination="CTz-cr-039" id="bsZ-UB-SpQ"/>
                 <outlet property="viewCell" destination="FyG-tx-nGN" id="VQg-zh-haK"/>
             </connections>
             <point key="canvasLocation" x="191.30434782608697" y="110.49107142857143"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="square.and.arrow.up.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="ic_baseline_settings_24" width="512" height="512"/>
+        <image name="logo_gmt" width="400" height="400"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

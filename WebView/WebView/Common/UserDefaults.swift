@@ -11,15 +11,27 @@ import UIKit
 
 class HAUserDefault {
     static let userDefault = UserDefaults.standard
-    static let kIntervalTime = "CountDownIntervalTime"
+    static let kProtocols = "protocols"
+    static let kLanguage = "language"
+    static let kHome = "home"
     static func saveSettingWith(key: String, value: Int) {
         userDefault.set(value, forKey: key)
         userDefault.synchronize()
     }
     
-    static func saveCountDownIntervalTime(intervalTime: Double) {
-        userDefault.set(intervalTime, forKey: kIntervalTime)
+    static func saveDropdownProtocols(item: Double) {
+        userDefault.set(item, forKey: kProtocols)
     }
     
-   
+    static func saveDropdownHome(item: Double) {
+        userDefault.set(item, forKey: kHome)
+    }
+    
+    static func saveDropdownLanguage(item: Double) {
+        userDefault.set(item, forKey: kLanguage)
+    }
+    
+    static func getDropdownLanguage(item: Double) -> String {
+        return userDefault.string(forKey: kLanguage) ?? ""
+    }
 }
