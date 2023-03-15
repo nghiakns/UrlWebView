@@ -24,6 +24,7 @@ class SettingViewController: UIViewController {
     @IBOutlet weak var languageDropdownImage: UIImageView!
     @IBOutlet weak var dropDownButton: UIButton!
     
+    var invicator = UIActivityIndicatorView()
     let dropDown = DropDown()
     let viewmodel = SettingViewModels()
     let phoneName = UIDevice.current.name
@@ -57,6 +58,10 @@ class SettingViewController: UIViewController {
         nextButton.layer.cornerRadius = 5
         cancelButton.setTitle("Cancel", for: .normal)
         nextButton.setTitle("Next", for: .normal)
+        invicator.center = view.center
+        invicator.style = UIActivityIndicatorView.Style.large
+        invicator.color = .black
+        view.addSubview(invicator)
     }
     
     @IBAction func backButton(_ sender: Any) {
@@ -75,8 +80,21 @@ class SettingViewController: UIViewController {
     }
     
     @IBAction func nextButton(_ sender: Any) {
-        viewmodel.login(eventHandle: EventHandle.login.getEventHandle(), email: emailTxtField.text ?? "", password: passwordTxtField.text ?? "", language: dropDown.selectedItem ?? "", phoneName: phoneName, uID: uID, model: model)
-        self.navigationController?.popViewController(animated: true)
+        self.invicator.startAnimating()
+        viewmodel.login(eventHandle: EventHandle.login.getEventHandle(), email: emailTxtField.text ?? "", password: passwordTxtField.text ?? "", language: dropDown.selectedItem ?? "", phoneName: phoneName, uID: uID, model: model, completion: { isSuccess, mess  in
+            if isSuccess {
+                self.invicator.stopAnimating()
+                let alert = UIAlertController()
+                alert.showAlert(title: "Success", message: mess, buttonAction: "Done", controller: self)
+//                self.navigationController?.popViewController(animated: true)
+            } else {
+                self.invicator.stopAnimating()
+                let alert = UIAlertController()
+                alert.showAlert(title: "Warning", message: mess, buttonAction: "Done", controller: self)
+//                self.navigationController?.popViewController(animated: true)
+            }
+        })
+        
     }
     
     @IBAction func resetPassword(_ sender: Any) {

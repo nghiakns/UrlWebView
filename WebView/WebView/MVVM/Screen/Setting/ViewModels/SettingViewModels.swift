@@ -9,10 +9,9 @@ import Foundation
 import Alamofire
 
 class SettingViewModels {
-    var res: String? = nil
-    func login(eventHandle: String, email: String, password: String, language: String, phoneName: String, uID: String, model: String) {
+    func login(eventHandle: String, email: String, password: String, language: String, phoneName: String, uID: String, model: String, completion: @escaping (_ isSuccess: Bool, _ mess: String) -> Void) ->Void {
         let url = BaseApiRespositories.url
-        if !email.isEmpty || !password.isEmpty {
+        if !email.isEmpty && !password.isEmpty {
             let params = ["cm": eventHandle,
                           "email": email,
                           "password": password,
@@ -23,11 +22,13 @@ class SettingViewModels {
             ] as [String : Any]
             AF.request(url, method: .get, parameters: params).responseData { res in
                 if let data = res.data {
-                    let json = String(data: data, encoding: String.Encoding.utf8)
-                    let response = json?.lowercased().contains("welcomergok")
-                    print(response as Any)
+                    let json = String(data: data, encoding: String.Encoding.utf8) ?? ""
+                    let isSuccess = json.lowercased().contains("welcomergok") ?? false
+                    completion(isSuccess, json)
                 }
             }
+        } else {
+            completion(false, "change language")
         }
     }
     

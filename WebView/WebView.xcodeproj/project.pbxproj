@@ -23,6 +23,9 @@
 		D187821829A628810085B86F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D187821629A628810085B86F /* Main.storyboard */; };
 		D187821A29A628850085B86F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D187821929A628850085B86F /* Assets.xcassets */; };
 		D187821D29A628850085B86F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D187821B29A628850085B86F /* LaunchScreen.storyboard */; };
+		D19590FE29C1FFBE00BB3B88 /* WebviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19590FD29C1FFBE00BB3B88 /* WebviewViewController.swift */; };
+		D195910129C21AC000BB3B88 /* HomeViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = D195910029C21AC000BB3B88 /* HomeViewModels.swift */; };
+		D195910329C2221F00BB3B88 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = D195910229C2221F00BB3B88 /* Alert.swift */; };
 		D1AB1553D1189B1B28B20C45 /* Pods_WebView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66AD0855B488C316AC0DDE65 /* Pods_WebView.framework */; };
 		D1D485FC29B588B500C47B72 /* ResourceColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D485FB29B588B500C47B72 /* ResourceColor.swift */; };
 		D1D485FE29B58D0700C47B72 /* ResourceText.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D485FD29B58D0700C47B72 /* ResourceText.swift */; };
@@ -56,6 +59,9 @@
 		D187821929A628850085B86F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D187821C29A628850085B86F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D187821E29A628850085B86F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D19590FD29C1FFBE00BB3B88 /* WebviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebviewViewController.swift; sourceTree = "<group>"; };
+		D195910029C21AC000BB3B88 /* HomeViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModels.swift; sourceTree = "<group>"; };
+		D195910229C2221F00BB3B88 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		D1D485FB29B588B500C47B72 /* ResourceColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceColor.swift; sourceTree = "<group>"; };
 		D1D485FD29B58D0700C47B72 /* ResourceText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceText.swift; sourceTree = "<group>"; };
 		D1D8CF2129B869B500BC57D6 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
@@ -198,6 +204,30 @@
 			path = WebView;
 			sourceTree = "<group>";
 		};
+		D19590FB29C1FF5B00BB3B88 /* Webview */ = {
+			isa = PBXGroup;
+			children = (
+				D19590FC29C1FFAF00BB3B88 /* Controller */,
+			);
+			path = Webview;
+			sourceTree = "<group>";
+		};
+		D19590FC29C1FFAF00BB3B88 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D19590FD29C1FFBE00BB3B88 /* WebviewViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D19590FF29C21AA500BB3B88 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				D195910029C21AC000BB3B88 /* HomeViewModels.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		D1D485F529B587C100C47B72 /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -205,6 +235,7 @@
 				D1D485FD29B58D0700C47B72 /* ResourceText.swift */,
 				D1D8CF2129B869B500BC57D6 /* UserDefaults.swift */,
 				D1D8CF2329B869D300BC57D6 /* Constants.swift */,
+				D195910229C2221F00BB3B88 /* Alert.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -212,7 +243,6 @@
 		D1D485F629B5884800C47B72 /* MVVM */ = {
 			isa = PBXGroup;
 			children = (
-
 				52C465A229B9E072001EF5E8 /* ViewModel */,
 				D12CF04E29B9C02B00C5319C /* Models */,
 				D15AF8A629B829F300999DBA /* Repositories */,
@@ -234,6 +264,7 @@
 		D1D485F829B5885B00C47B72 /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				D19590FB29C1FF5B00BB3B88 /* Webview */,
 				D1D8CF2529B86A2E00BC57D6 /* UrlDetail */,
 				D1ECB36929B712B8005F755D /* Alert */,
 				D1ECB36329B6D70B005F755D /* Setting */,
@@ -245,6 +276,7 @@
 		D1D485FF29B590A600C47B72 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				D19590FF29C21AA500BB3B88 /* ViewModels */,
 				D1D4860029B590B000C47B72 /* Controller */,
 			);
 			path = Home;
@@ -442,14 +474,17 @@
 				D187821529A628810085B86F /* HomeViewController.swift in Sources */,
 				52107A5929B89F8700A3A45E /* ImageModels.swift in Sources */,
 				D1D485FC29B588B500C47B72 /* ResourceColor.swift in Sources */,
+				D195910329C2221F00BB3B88 /* Alert.swift in Sources */,
 				D1D8CF2229B869B500BC57D6 /* UserDefaults.swift in Sources */,
 				D15AF8A829B82A3E00999DBA /* BaseApiRepository.swift in Sources */,
 				D1ECB36C29B712D1005F755D /* AlertViewController.swift in Sources */,
+				D19590FE29C1FFBE00BB3B88 /* WebviewViewController.swift in Sources */,
 				D1ECB35D29B6081F005F755D /* UrlTableViewCell.swift in Sources */,
 				D187821129A628810085B86F /* AppDelegate.swift in Sources */,
 				52107A5529B88B7900A3A45E /* AlertIconCollectionViewCell.swift in Sources */,
 				D1ECB36629B6D727005F755D /* SettingViewController.swift in Sources */,
 				D12CF05029B9C04A00C5319C /* UrlModels.swift in Sources */,
+				D195910129C21AC000BB3B88 /* HomeViewModels.swift in Sources */,
 				D15AF8A529B8279600999DBA /* SettingViewModels.swift in Sources */,
 				D187821329A628810085B86F /* SceneDelegate.swift in Sources */,
 				D1D8CF2829B86A5000BC57D6 /* UrlDetailViewController.swift in Sources */,
@@ -603,7 +638,8 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				EXCLUDED_ARCHS = arm64;
+				DEVELOPMENT_TEAM = CHX876PYD8;
+				EXCLUDED_ARCHS = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WebView/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -616,7 +652,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.WebView;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nghiank.webview;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -632,7 +668,8 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				EXCLUDED_ARCHS = arm64;
+				DEVELOPMENT_TEAM = CHX876PYD8;
+				EXCLUDED_ARCHS = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WebView/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -645,7 +682,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.WebView;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nghiank.webview;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
