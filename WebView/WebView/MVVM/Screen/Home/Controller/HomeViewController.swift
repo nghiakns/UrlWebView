@@ -16,9 +16,11 @@ class HomeViewController: UIViewController, WKUIDelegate{
     @IBOutlet weak var infoImage: UIImageView!
     @IBOutlet weak var addImage: UIImageView!
     
+    var invicator = UIActivityIndicatorView()
+    var viewModel = HomeViewModels()
     var taskSevices = ModelSevices()
     var tasks:[ModelsUrl] = []
-    var webView: WKWebView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         config()
@@ -41,11 +43,20 @@ class HomeViewController: UIViewController, WKUIDelegate{
     func autoLoad() {
         let autoLoad = tasks.filter({ $0.autoLoad == true})
         if !autoLoad.isEmpty {
-            guard let url = URL(string: autoLoad[0].url ?? "") else { return }
-            if UIApplication.shared.canOpenURL(url) {
-                UIApplication.shared.open(url)
-            } else {
-                print("err url")
+            self.invicator.startAnimating()
+            guard let url = autoLoad[0].url else { return }
+            viewModel.checkLoadView(url: url) { canLoaded in
+                if canLoaded {
+                    guard let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "webview") as? WebviewViewController else { return }
+                    vc.url = url
+                    vc.name = autoLoad[0].name ?? ""
+                    self.invicator.stopAnimating()
+                    self.navigationController?.pushViewController(vc, animated: true)
+                } else {
+                    self.invicator.stopAnimating()
+                    let alert = UIAlertController()
+                    alert.showAlert(title: "Warning", message: "Url error", buttonAction: "Done", controller: self)
+                }
             }
         }
     }
@@ -54,6 +65,10 @@ class HomeViewController: UIViewController, WKUIDelegate{
         headerView.backgroundColor = ResourceColor.headerView
         homeTitle.text = "Home"
         homeTitle.textColor = .white
+        invicator.center = view.center
+        invicator.style = UIActivityIndicatorView.Style.large
+        invicator.color = .black
+        view.addSubview(invicator)
     }
     
     func configTableView() {
@@ -97,6 +112,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: UrlTableViewCell.identifier, for: indexPath) as? UrlTableViewCell else { return UITableViewCell() }
+        cell.selectionStyle = .none
         cell.name.text = tasks[indexPath.row].name
         let image = tasks[indexPath.row].icon ?? ""
         if !image.isEmpty {
@@ -122,11 +138,20 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let url = URL(string: tasks[indexPath.row].url ?? "") else { return }
-        if UIApplication.shared.canOpenURL(url) {
-            UIApplication.shared.open(url)
-        } else {
-            print("err url")
+        guard let url = tasks[indexPath.row].url else { return }
+        self.invicator.startAnimating()
+        viewModel.checkLoadView(url: url) { canLoaded in
+            if canLoaded {
+                guard let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "webview") as? WebviewViewController else { return }
+                vc.url = url
+                vc.name = self.tasks[indexPath.row].name ?? ""
+                self.invicator.stopAnimating()
+                self.navigationController?.pushViewController(vc, animated: true)
+            } else {
+                self.invicator.stopAnimating()
+                let alert = UIAlertController()
+                alert.showAlert(title: "Warning", message: "Url error", buttonAction: "Done", controller: self)
+            }
         }
     }
 }

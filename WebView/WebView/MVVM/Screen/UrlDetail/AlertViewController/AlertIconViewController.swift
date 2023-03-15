@@ -92,7 +92,7 @@ class AlertIconViewController: UIViewController, UICollectionViewDelegate, UICol
          layout.minimumInteritemSpacing = 04
          layout.minimumLineSpacing = 04
          layout.invalidateLayout()
-         return CGSize(width: ((self.view.frame.width/2) - 6), height: ((self.view.frame.width / 2) - 6))
+        return CGSize(width: collectionView.frame.width / 6, height: collectionView.frame.height / 2)
          }
     
    
