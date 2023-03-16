@@ -9,7 +9,7 @@ import Foundation
 
 struct DropdownData {
     
-    static let inspectionTimes = [
+    static let dropdownDomain = [
         "http".localized,
         "https".localized,
         "rtsp".localized,
@@ -19,13 +19,20 @@ struct DropdownData {
         "Touch".localized,
         "Scada-Vis".localized,
         "Schedulers".localized,
+        "Mosaic".localized
+    ]
+    
+    static let homeDropDownLogin = [
+        "Touch".localized,
+        "Scada-Vis".localized,
+        "Schedulers".localized,
         "Mosaic".localized,
         "Assistant".localized,
         "Premium".localized,
     ]
     
     static let languageDropdown = [
-        "Tiếng Việt".localized,
+        "Vietnamese".localized,
         "English".localized
     ]
     

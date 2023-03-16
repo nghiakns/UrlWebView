@@ -23,12 +23,14 @@ class SettingViewModels {
             AF.request(url, method: .get, parameters: params).responseData { res in
                 if let data = res.data {
                     let json = String(data: data, encoding: String.Encoding.utf8) ?? ""
-                    let isSuccess = json.lowercased().contains("welcomergok") ?? false
+                    let isSuccess = json.lowercased().contains("welcomergok") 
                     completion(isSuccess, json)
+                } else {
+                    completion(false, "time out")
                 }
             }
         } else {
-            completion(false, "change language")
+            completion(false, "Change language successfull!")
         }
     }
     

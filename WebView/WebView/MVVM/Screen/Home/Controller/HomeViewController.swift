@@ -7,7 +7,7 @@
 
 import UIKit
 import WebKit
-class HomeViewController: UIViewController, WKUIDelegate{
+class HomeViewController: UIViewController, WKUIDelegate, AlertCallBack {
 
     @IBOutlet weak var tableview: UITableView!
     @IBOutlet weak var headerView: UIView!
@@ -20,6 +20,8 @@ class HomeViewController: UIViewController, WKUIDelegate{
     var viewModel = HomeViewModels()
     var taskSevices = ModelSevices()
     var tasks:[ModelsUrl] = []
+    var message: String = ""
+    var isShowAlert: Bool = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,24 +40,35 @@ class HomeViewController: UIViewController, WKUIDelegate{
         } catch let error{
             print(error.localizedDescription)
         }
+        if !isShowAlert {
+            let alert = UIAlertController()
+            alert.showAlert(title: "Alert", message: message, buttonAction: "Done", controller: self)
+            isShowAlert = !isShowAlert
+        }
+    }
+    
+    func showAlert(message: String, isShow: Bool) {
+        let alert = UIAlertController()
+        self.message = message
+        self.isShowAlert = isShow
     }
     
     func autoLoad() {
-        let autoLoad = tasks.filter({ $0.autoLoad == true})
-        if !autoLoad.isEmpty {
+        let autoLoad = tasks.first(where: { $0.autoLoad == true})
+        if autoLoad != nil {
             self.invicator.startAnimating()
-            guard let url = autoLoad[0].url else { return }
+            guard let url = autoLoad?.url else { return }
             viewModel.checkLoadView(url: url) { canLoaded in
                 if canLoaded {
                     guard let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "webview") as? WebviewViewController else { return }
                     vc.url = url
-                    vc.name = autoLoad[0].name ?? ""
+                    vc.name = autoLoad?.name ?? ""
                     self.invicator.stopAnimating()
                     self.navigationController?.pushViewController(vc, animated: true)
                 } else {
                     self.invicator.stopAnimating()
                     let alert = UIAlertController()
-                    alert.showAlert(title: "Warning", message: "Url error", buttonAction: "Done", controller: self)
+                    alert.showAlert(title: "Warning", message: "Url error or network is disconnected", buttonAction: "Done", controller: self)
                 }
             }
         }
@@ -95,6 +108,7 @@ class HomeViewController: UIViewController, WKUIDelegate{
     
     @IBAction func settingButton(_ sender: Any) {
         guard let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "setting") as? SettingViewController else { return }
+        vc.delegate = self
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -150,7 +164,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             } else {
                 self.invicator.stopAnimating()
                 let alert = UIAlertController()
-                alert.showAlert(title: "Warning", message: "Url error", buttonAction: "Done", controller: self)
+                alert.showAlert(title: "Alert", message: "Url error or network is disconnected", buttonAction: "Done", controller: self)
             }
         }
     }
