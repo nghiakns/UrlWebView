@@ -8,6 +8,10 @@
 import UIKit
 import DropDown
 
+protocol AlertCallBack {
+    func showAlert(message: String, isShow: Bool)
+}
+
 class SettingViewController: UIViewController {
 
     @IBOutlet weak var headerView: UIView!
@@ -30,6 +34,7 @@ class SettingViewController: UIViewController {
     let phoneName = UIDevice.current.name
     let model = UIDevice.current.model
     let uID = UIDevice.current.identifierForVendor?.uuidString ?? ""
+    var delegate: AlertCallBack?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,13 +44,25 @@ class SettingViewController: UIViewController {
     func config() {
         dropDown.anchorView = dropDownButton
         dropDown.dataSource = DropdownData.languageDropdown
+        if WebViewUserDefault.getDropdownLanguage().isEmpty {
+            dropDown.selectRow(1)
+            dropDownButton.setTitle(dropDown.dataSource[1], for: .normal)
+        } else {
+            for index in 0..<dropDown.dataSource.count {
+                if dropDown.dataSource[index] == WebViewUserDefault.getDropdownLanguage() {
+                    dropDown.selectRow(index)
+                    dropDownButton.setTitle(WebViewUserDefault.getDropdownLanguage(), for: .normal)
+                }
+            }
+        }
+        
         dropDownButton.layer.borderColor = UIColor.lightGray.cgColor
         dropDownButton.layer.borderWidth = 1
         dropDownButton.layer.cornerRadius = dropDownButton.frame.height / 2
         dropDownButton.layer.masksToBounds = true
         dropDown.selectionAction = { [weak self] (index: Int, item: String) in
             self?.dropDownButton.setTitle(item, for: .normal)
-            HAUserDefault.saveDropdownLanguage(item: item.getLanguage())
+            WebViewUserDefault.saveDropdownLanguage(item: "English")
         }
 
         languageDropdownImage.setImageColor(color: UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 1))
@@ -72,6 +89,7 @@ class SettingViewController: UIViewController {
         viewmodel.logout(eventHandle: EventHandle.logout.getEventHandle(), email: emailTxtField.text ?? "", language: dropDown.selectedItem ?? "", phoneName: phoneName, uID: uID, model: model)
         emailTxtField.text = ""
         passwordTxtField.text = ""
+        WebViewUserDefault.saveIsLogin(isLogin: false)
         self.navigationController?.popToRootViewController(animated: true)
     }
     
@@ -81,17 +99,19 @@ class SettingViewController: UIViewController {
     
     @IBAction func nextButton(_ sender: Any) {
         self.invicator.startAnimating()
+        WebViewUserDefault.saveDropdownLanguage(item: dropDown.selectedItem ?? "English")
         viewmodel.login(eventHandle: EventHandle.login.getEventHandle(), email: emailTxtField.text ?? "", password: passwordTxtField.text ?? "", language: dropDown.selectedItem ?? "", phoneName: phoneName, uID: uID, model: model, completion: { isSuccess, mess  in
             if isSuccess {
                 self.invicator.stopAnimating()
-                let alert = UIAlertController()
-                alert.showAlert(title: "Success", message: mess, buttonAction: "Done", controller: self)
-//                self.navigationController?.popViewController(animated: true)
+                WebViewUserDefault.saveIsLogin(isLogin: true)
+                guard let delegate = self.delegate else { return }
+                delegate.showAlert(message: "Login successfull!", isShow: false)
+                self.navigationController?.popViewController(animated: true)
             } else {
                 self.invicator.stopAnimating()
-                let alert = UIAlertController()
-                alert.showAlert(title: "Warning", message: mess, buttonAction: "Done", controller: self)
-//                self.navigationController?.popViewController(animated: true)
+                guard let delegate = self.delegate else { return }
+                delegate.showAlert(message: mess, isShow: false)
+                self.navigationController?.popViewController(animated: true)
             }
         })
         
