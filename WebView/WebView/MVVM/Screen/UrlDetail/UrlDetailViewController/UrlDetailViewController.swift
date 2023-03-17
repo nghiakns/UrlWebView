@@ -59,9 +59,14 @@ class UrlDetailViewController: UIViewController, didSeclectImage {
         addButton.setTitle("Add URL", for: .normal)
         headerView.backgroundColor = ResourceColor.headerView
         DropdownDomain.anchorView = dropDownDomainButton
-        DropdownDomain.dataSource = DropdownData.inspectionTimes
+        DropdownDomain.dataSource = DropdownData.dropdownDomain
         DropdownHome.anchorView = dropDownHomeButton
-        DropdownHome.dataSource = DropdownData.homeDropDown
+        let isLogin = WebViewUserDefault.getIsLogin()
+        if isLogin {
+            DropdownHome.dataSource = DropdownData.homeDropDownLogin
+        } else {
+            DropdownHome.dataSource = DropdownData.homeDropDown
+        }
         dropDownDomainButton.layer.borderColor = UIColor.lightGray.cgColor
         dropDownDomainButton.layer.borderWidth = 1
         dropDownDomainButton.layer.cornerRadius = 4
@@ -86,13 +91,13 @@ class UrlDetailViewController: UIViewController, didSeclectImage {
         dropDownDomainButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 0)
         DropdownDomain.selectionAction = { [weak self] (index: Int, item: String) in
             self?.dropDownDomainButton.setTitle(item, for: .normal)
-            HAUserDefault.saveDropdownProtocols(item: item.getDomain())
+            WebViewUserDefault.saveDropdownProtocols(item: item.getDomain())
         }
         DropdownDomain.bottomOffset = CGPoint(x: 0, y: dropDownDomainButton.bounds.height)
         dropDownHomeButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 0)
         DropdownHome.selectionAction = { [weak self] (index: Int, item: String) in
             self?.dropDownHomeButton.setTitle(item, for: .normal)
-            HAUserDefault.saveDropdownHome(item: item.getHome())
+            WebViewUserDefault.saveDropdownHome(item: item.getHome())
         }
         DropdownHome.bottomOffset = CGPoint(x: 0, y: dropDownHomeButton.bounds.height)
     }
@@ -139,7 +144,7 @@ class UrlDetailViewController: UIViewController, didSeclectImage {
                     dropDownHomeButton.setTitle(self.model[index].autoLoadPage ?? "-", for: .normal)
                 }
             }
-            dropDownHomeButton.setTitle(self.model[index].autoLoadPage ?? "", for: .normal)
+            dropDownHomeButton.setTitle(self.model[index].autoLoadPage ?? "-", for: .normal)
             paramTextfield.text = self.model[index].params ?? ""
             let image = self.model[index].icon ?? ""
             if !image.isEmpty {
