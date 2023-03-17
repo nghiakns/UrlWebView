@@ -35,6 +35,7 @@
 		D1ECB35E29B6081F005F755D /* UrlTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1ECB35C29B6081F005F755D /* UrlTableViewCell.xib */; };
 		D1ECB36629B6D727005F755D /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ECB36529B6D727005F755D /* SettingViewController.swift */; };
 		D1ECB36C29B712D1005F755D /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ECB36B29B712D1005F755D /* AlertViewController.swift */; };
+		D1F4907C29C4E6E300E5A97E /* WebviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F4907B29C4E6E300E5A97E /* WebviewViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +70,7 @@
 		D1ECB35C29B6081F005F755D /* UrlTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UrlTableViewCell.xib; sourceTree = "<group>"; };
 		D1ECB36529B6D727005F755D /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		D1ECB36B29B712D1005F755D /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
+		D1F4907B29C4E6E300E5A97E /* WebviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebviewViewController.swift; sourceTree = "<group>"; };
 		E443ABB69297A42EE3DCF1D5 /* Pods-WebView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebView.release.xcconfig"; path = "Target Support Files/Pods-WebView/Pods-WebView.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -246,6 +248,7 @@
 		D1D485F829B5885B00C47B72 /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				D1F4907D29C4E6FB00E5A97E /* Webview */,
 				D1D8CF2529B86A2E00BC57D6 /* UrlDetail */,
 				D1ECB36929B712B8005F755D /* Alert */,
 				D1ECB36329B6D70B005F755D /* Setting */,
@@ -326,6 +329,22 @@
 			isa = PBXGroup;
 			children = (
 				D1ECB36B29B712D1005F755D /* AlertViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D1F4907D29C4E6FB00E5A97E /* Webview */ = {
+			isa = PBXGroup;
+			children = (
+				D1F4907E29C4E70400E5A97E /* Controller */,
+			);
+			path = Webview;
+			sourceTree = "<group>";
+		};
+		D1F4907E29C4E70400E5A97E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D1F4907B29C4E6E300E5A97E /* WebviewViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -467,6 +486,7 @@
 				D195910129C21AC000BB3B88 /* HomeViewModels.swift in Sources */,
 				D15AF8A529B8279600999DBA /* SettingViewModels.swift in Sources */,
 				D187821329A628810085B86F /* SceneDelegate.swift in Sources */,
+				D1F4907C29C4E6E300E5A97E /* WebviewViewController.swift in Sources */,
 				D1D8CF2829B86A5000BC57D6 /* UrlDetailViewController.swift in Sources */,
 				D1D8CF2429B869D300BC57D6 /* Constants.swift in Sources */,
 			);

@@ -61,8 +61,7 @@ class HomeViewController: UIViewController, WKUIDelegate, AlertCallBack {
             viewModel.checkLoadView(url: url) { canLoaded in
                 if canLoaded {
                     guard let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "webview") as? WebviewViewController else { return }
-                    vc.url = url
-                    vc.name = autoLoad?.name ?? ""
+                    vc.urlString = url
                     self.invicator.stopAnimating()
                     self.navigationController?.pushViewController(vc, animated: true)
                 } else {
@@ -157,8 +156,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         viewModel.checkLoadView(url: url) { canLoaded in
             if canLoaded {
                 guard let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "webview") as? WebviewViewController else { return }
-                vc.url = url
-                vc.name = self.tasks[indexPath.row].name ?? ""
+                vc.urlString = url
                 self.invicator.stopAnimating()
                 self.navigationController?.pushViewController(vc, animated: true)
             } else {

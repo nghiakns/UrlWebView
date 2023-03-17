@@ -733,6 +733,62 @@
             </objects>
             <point key="canvasLocation" x="1716" y="115"/>
         </scene>
+        <!--Webview View Controller-->
+        <scene sceneID="W5q-SD-Ma8">
+            <objects>
+                <viewController storyboardIdentifier="webview" id="Ju1-tE-JCC" customClass="WebviewViewController" customModule="WebView" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bsY-rn-jn4">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lAg-VK-kLF">
+                                <rect key="frame" x="0.0" y="59" width="430" height="769"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1yx-8n-bZp">
+                                <rect key="frame" x="0.0" y="828" width="430" height="70"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kol-V7-5cN">
+                                        <rect key="frame" x="15" y="17.666666666666629" width="64.333333333333329" height="35"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Done"/>
+                                        <connections>
+                                            <action selector="doneButton:" destination="Ju1-tE-JCC" eventType="touchUpInside" id="qm9-he-eVJ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.8784313725490196" green="0.49803921568627452" blue="0.37254901960784315" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="5LU-7W-S6I"/>
+                                    <constraint firstItem="Kol-V7-5cN" firstAttribute="centerY" secondItem="1yx-8n-bZp" secondAttribute="centerY" id="Dom-F9-303"/>
+                                    <constraint firstItem="Kol-V7-5cN" firstAttribute="leading" secondItem="1yx-8n-bZp" secondAttribute="leading" constant="15" id="NDv-98-oja"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="v3k-j3-tUN"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="v3k-j3-tUN" firstAttribute="trailing" secondItem="lAg-VK-kLF" secondAttribute="trailing" id="2Q3-7o-gFS"/>
+                            <constraint firstItem="1yx-8n-bZp" firstAttribute="leading" secondItem="v3k-j3-tUN" secondAttribute="leading" id="3mt-Rn-SM8"/>
+                            <constraint firstItem="v3k-j3-tUN" firstAttribute="bottom" secondItem="1yx-8n-bZp" secondAttribute="bottom" id="5Uv-WS-gxJ"/>
+                            <constraint firstItem="lAg-VK-kLF" firstAttribute="leading" secondItem="v3k-j3-tUN" secondAttribute="leading" id="epU-5y-i3R"/>
+                            <constraint firstItem="v3k-j3-tUN" firstAttribute="trailing" secondItem="1yx-8n-bZp" secondAttribute="trailing" id="uEN-ZM-1MQ"/>
+                            <constraint firstItem="lAg-VK-kLF" firstAttribute="top" secondItem="v3k-j3-tUN" secondAttribute="top" id="v26-pK-gGq"/>
+                            <constraint firstItem="1yx-8n-bZp" firstAttribute="top" secondItem="lAg-VK-kLF" secondAttribute="bottom" id="xzf-Og-U7E"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webview" destination="lAg-VK-kLF" id="LJN-mn-Ce0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zTG-Oj-5A1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2545" y="113"/>
+        </scene>
         <!--Setting View Controller-->
         <scene sceneID="F1W-uU-H6a">
             <objects>
