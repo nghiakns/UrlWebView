@@ -23,7 +23,6 @@
 		D187821829A628810085B86F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D187821629A628810085B86F /* Main.storyboard */; };
 		D187821A29A628850085B86F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D187821929A628850085B86F /* Assets.xcassets */; };
 		D187821D29A628850085B86F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D187821B29A628850085B86F /* LaunchScreen.storyboard */; };
-		D19590FE29C1FFBE00BB3B88 /* WebviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19590FD29C1FFBE00BB3B88 /* WebviewViewController.swift */; };
 		D195910129C21AC000BB3B88 /* HomeViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = D195910029C21AC000BB3B88 /* HomeViewModels.swift */; };
 		D195910329C2221F00BB3B88 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = D195910229C2221F00BB3B88 /* Alert.swift */; };
 		D1AB1553D1189B1B28B20C45 /* Pods_WebView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66AD0855B488C316AC0DDE65 /* Pods_WebView.framework */; };
@@ -59,7 +58,6 @@
 		D187821929A628850085B86F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D187821C29A628850085B86F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D187821E29A628850085B86F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D19590FD29C1FFBE00BB3B88 /* WebviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebviewViewController.swift; sourceTree = "<group>"; };
 		D195910029C21AC000BB3B88 /* HomeViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModels.swift; sourceTree = "<group>"; };
 		D195910229C2221F00BB3B88 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		D1D485FB29B588B500C47B72 /* ResourceColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceColor.swift; sourceTree = "<group>"; };
@@ -204,22 +202,6 @@
 			path = WebView;
 			sourceTree = "<group>";
 		};
-		D19590FB29C1FF5B00BB3B88 /* Webview */ = {
-			isa = PBXGroup;
-			children = (
-				D19590FC29C1FFAF00BB3B88 /* Controller */,
-			);
-			path = Webview;
-			sourceTree = "<group>";
-		};
-		D19590FC29C1FFAF00BB3B88 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				D19590FD29C1FFBE00BB3B88 /* WebviewViewController.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
 		D19590FF29C21AA500BB3B88 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -264,7 +246,6 @@
 		D1D485F829B5885B00C47B72 /* Screen */ = {
 			isa = PBXGroup;
 			children = (
-				D19590FB29C1FF5B00BB3B88 /* Webview */,
 				D1D8CF2529B86A2E00BC57D6 /* UrlDetail */,
 				D1ECB36929B712B8005F755D /* Alert */,
 				D1ECB36329B6D70B005F755D /* Setting */,
@@ -478,7 +459,6 @@
 				D1D8CF2229B869B500BC57D6 /* UserDefaults.swift in Sources */,
 				D15AF8A829B82A3E00999DBA /* BaseApiRepository.swift in Sources */,
 				D1ECB36C29B712D1005F755D /* AlertViewController.swift in Sources */,
-				D19590FE29C1FFBE00BB3B88 /* WebviewViewController.swift in Sources */,
 				D1ECB35D29B6081F005F755D /* UrlTableViewCell.swift in Sources */,
 				D187821129A628810085B86F /* AppDelegate.swift in Sources */,
 				52107A5529B88B7900A3A45E /* AlertIconCollectionViewCell.swift in Sources */,
