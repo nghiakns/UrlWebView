@@ -17,7 +17,7 @@ struct DropdownData {
     
     static let homeDropDown = [
         ResourceText.addAutoloadPageTouch.localizedString(),
-        ResourceText.addAutoloadPageScadaVis.localizedString()
+        ResourceText.addAutoloadPageScadaVis.localizedString(),
         ResourceText.addAutoloadPageSchedulers.localizedString(),
         ResourceText.addAutoloadPageMosaic.localizedString()
     ]
