@@ -23,14 +23,18 @@ class SettingViewModels {
             AF.request(url, method: .get, parameters: params).responseData { res in
                 if let data = res.data {
                     let json = String(data: data, encoding: String.Encoding.utf8) ?? ""
-                    let isSuccess = json.lowercased().contains("welcomergok") 
-                    completion(isSuccess, json)
+                    let isSuccess = json.lowercased().contains(ResourceText.networkResSuccess.localizedString())
+                    if isSuccess {
+                        completion(isSuccess, ResourceText.homeAlertLoginSuccess.localizedString())
+                    } else {
+                        completion(false, json)
+                    }
                 } else {
-                    completion(false, "time out")
+                    completion(false, ResourceText.commonAlertError.localizedString())
                 }
             }
         } else {
-            completion(false, "Change language successfull!")
+            completion(false, ResourceText.homeAlertChangeLanguage.localizedString())
         }
     }
     

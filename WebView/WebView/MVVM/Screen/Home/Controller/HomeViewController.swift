@@ -42,13 +42,12 @@ class HomeViewController: UIViewController, WKUIDelegate, AlertCallBack {
         }
         if !isShowAlert {
             let alert = UIAlertController()
-            alert.showAlert(title: "Alert", message: message, buttonAction: "Done", controller: self)
+            alert.showAlert(title: ResourceText.commonAlert.localizedString(), message: message, buttonAction: ResourceText.commonClose.localizedString(), controller: self)
             isShowAlert = !isShowAlert
         }
     }
     
     func showAlert(message: String, isShow: Bool) {
-        let alert = UIAlertController()
         self.message = message
         self.isShowAlert = isShow
     }
@@ -67,7 +66,7 @@ class HomeViewController: UIViewController, WKUIDelegate, AlertCallBack {
                 } else {
                     self.invicator.stopAnimating()
                     let alert = UIAlertController()
-                    alert.showAlert(title: "Warning", message: "Url error or network is disconnected", buttonAction: "Done", controller: self)
+                    alert.showAlert(title: ResourceText.commonAlert.localizedString(), message: ResourceText.homeAlertUrlOrNetworkError.localizedString(), buttonAction: ResourceText.commonClose.localizedString(), controller: self)
                 }
             }
         }
@@ -162,7 +161,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             } else {
                 self.invicator.stopAnimating()
                 let alert = UIAlertController()
-                alert.showAlert(title: "Alert", message: "Url error or network is disconnected", buttonAction: "Done", controller: self)
+                alert.showAlert(title: ResourceText.commonAlert.localizedString(), message: ResourceText.homeAlertUrlOrNetworkError.localizedString(), buttonAction: ResourceText.commonClose.localizedString(), controller: self)
             }
         }
     }

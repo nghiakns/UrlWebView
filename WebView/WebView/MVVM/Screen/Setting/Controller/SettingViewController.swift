@@ -75,8 +75,8 @@ class SettingViewController: UIViewController {
         nextButton.tintColor = .white
         cancelButton.layer.cornerRadius = 5
         nextButton.layer.cornerRadius = 5
-        cancelButton.setTitle("Cancel", for: .normal)
-        nextButton.setTitle("Next", for: .normal)
+        cancelButton.setTitle(ResourceText.commonCancel.localizedString(), for: .normal)
+        nextButton.setTitle(ResourceText.commonNext.localizedString(), for: .normal)
         invicator.center = view.center
         invicator.style = UIActivityIndicatorView.Style.large
         invicator.color = .black
@@ -88,11 +88,18 @@ class SettingViewController: UIViewController {
     }
     
     @IBAction func logoutButton(_ sender: Any) {
-        viewmodel.logout(eventHandle: EventHandle.logout.getEventHandle(), email: emailTxtField.text ?? "", language: dropDown.selectedItem ?? "", phoneName: phoneName, uID: uID, model: model)
+        var language = ""
+        if dropDown.selectedItem == ResourceText.settingLanguageEnglish.localizedString() {
+            language = "eng"
+        } else {
+            language = "vie"
+        }
+        viewmodel.logout(eventHandle: EventHandle.logout.getEventHandle(), email: emailTxtField.text ?? "", language: language, phoneName: phoneName, uID: uID, model: model)
         emailTxtField.text = ""
         passwordTxtField.text = ""
         WebViewUserDefault.saveIsLogin(isLogin: false)
-        self.navigationController?.popToRootViewController(animated: true)
+        let alert = UIAlertController()
+        alert.showAlert(title: ResourceText.commonAlert.localizedString(), message: ResourceText.settingAlertLogoutSuccess.localizedString(), buttonAction: ResourceText.commonClose.localizedString(), controller: self)
     }
     
     @IBAction func cancelButton(_ sender: Any) {
@@ -101,17 +108,20 @@ class SettingViewController: UIViewController {
     
     @IBAction func nextButton(_ sender: Any) {
         self.invicator.startAnimating()
+        var language = ""
         if dropDown.selectedItem == ResourceText.settingLanguageEnglish.localizedString() {
             WebViewUserDefault.saveDropdownLanguage(item: "en")
+            language = "eng"
         } else {
             WebViewUserDefault.saveDropdownLanguage(item: "vi")
+            language = "vie"
         }
-        viewmodel.login(eventHandle: EventHandle.login.getEventHandle(), email: emailTxtField.text ?? "", password: passwordTxtField.text ?? "", language: dropDown.selectedItem ?? "", phoneName: phoneName, uID: uID, model: model, completion: { isSuccess, mess  in
+        viewmodel.login(eventHandle: EventHandle.login.getEventHandle(), email: emailTxtField.text ?? "", password: passwordTxtField.text ?? "", language: language, phoneName: phoneName, uID: uID, model: model, completion: { isSuccess, mess  in
             if isSuccess {
                 self.invicator.stopAnimating()
                 WebViewUserDefault.saveIsLogin(isLogin: true)
                 guard let delegate = self.delegate else { return }
-                delegate.showAlert(message: "Login successfull!", isShow: false)
+                delegate.showAlert(message: mess, isShow: false)
                 self.navigationController?.popViewController(animated: true)
             } else {
                 self.invicator.stopAnimating()
@@ -125,7 +135,8 @@ class SettingViewController: UIViewController {
     
     @IBAction func resetPassword(_ sender: Any) {
         viewmodel.resetPassword(eventHandle: EventHandle.resetPassword.getEventHandle(), email: emailTxtField.text ?? "", phoneName: phoneName, uID: uID, model: model)
-        self.navigationController?.popToRootViewController(animated: true)
+        let alert = UIAlertController()
+        alert.showAlert(title: ResourceText.commonAlert.localizedString(), message: ResourceText.settingAlertResetPassSuccess.localizedString(), buttonAction: ResourceText.commonClose.localizedString(), controller: self)
     }
     
     @IBAction func languageDropdownButton(_ sender: Any) {
