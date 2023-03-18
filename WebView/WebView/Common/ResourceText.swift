@@ -27,9 +27,14 @@ enum ResourceText: String {
     case commonName = "Common.Name"
     case commonEmail = "Common.Email"
     case commonAdd = "Common.Add"
+    case commonAlert = "Common.Alert"
+    case commonAlertError = "Common.Alert.Error"
 
     // MARK: -Home
     case homeTitle = "Home.Title"
+    case homeAlertLoginSuccess = "Home.Alert.LoginSuccess"
+    case homeAlertChangeLanguage = "Home.Alert.ChangeLanguage"
+    case homeAlertUrlOrNetworkError = "Home.Alert.UrlOrNetworkError"
 
     //MARK: -Setting
     case settingTitle = "Setting.Title"
@@ -38,14 +43,16 @@ enum ResourceText: String {
     case settingLanguageVietNam = "Setting.Language.VietNam"
     case settingLanguageEnglish = "Setting.Language.English"
     case settingResetpass = "Setting.ResetPassword"
+    case settingAlertLogoutSuccess = "Setting.Alert.LogoutSuccess"
+    case settingAlertResetPassSuccess = "Setting.Alert.ResetPassSuccess"
 
     //MARK: -Network
     case networkResSuccess = "Network.Response.Success"
-    case networkPopTitleSuccess = "Network.Popup.Title.Success"
 
     //MARK: -Add
     case addTitle = "Add.Title"
     case addDomain = "Add.Domain"
+    case addHTTP = "Add.HTTP"
     case addHTTPS = "Add.HTTPS"
     case addRTSP = "Add.RTSP"
     case addAutoload = "Add.Autoload"
@@ -58,11 +65,15 @@ enum ResourceText: String {
     case addAutoloadPagePremium = "Add.AutoloadPage.Premium"
     case addParam = "Add.Param"
     case addIcon = "Add.Icon"
+    case addAlertFillInfo = "Add.Alert.FillInfo"
 
     case updateURL = "UpdateURL"
     
     func localizedString() -> String {
-        return NSLocalizedString(self.rawValue, comment: "")
+        let lang = WebViewUserDefault.getDropdownLanguage()
+        let path = Bundle.main.path(forResource: lang, ofType: "lproj")
+        let bundle = Bundle(path: path!)
+        return NSLocalizedString(self.rawValue, tableName: nil, bundle: bundle!, value: "", comment: "")
     }
 }
 

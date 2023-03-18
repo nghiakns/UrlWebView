@@ -32,6 +32,13 @@ class UrlDetailViewController: UIViewController, didSeclectImage {
     @IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var deleteImage: UIImageView!
     @IBOutlet weak var headerTitle: UILabel!
+    @IBOutlet weak var domainLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var loginLabel: UILabel!
+    @IBOutlet weak var passwordLabel: UILabel!
+    @IBOutlet weak var autoLoadLabel: UILabel!
+    @IBOutlet weak var autoLoadPageLabel: UILabel!
+    @IBOutlet weak var paramLabel: UILabel!
     
     var model: [ModelsUrl] = []
     let DropdownDomain = DropDown()
@@ -42,6 +49,7 @@ class UrlDetailViewController: UIViewController, didSeclectImage {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        settext()
         configure()
         imageDropDownI.setImageColor(color: UIColor(red: 150/255, green: 150/255, blue: 150/255, alpha: 1))
         imageHome.setImageColor(color: UIColor(red: 150/255, green: 150/255, blue: 150/255, alpha: 1))
@@ -53,10 +61,21 @@ class UrlDetailViewController: UIViewController, didSeclectImage {
         imageIcon = image
     }
     
+    func settext() {
+        headerTitle.text = ResourceText.addTitle.localizedString()
+        domainLabel.text = ResourceText.addDomain.localizedString()
+        nameLabel.text = ResourceText.commonName.localizedString()
+        loginLabel.text = ResourceText.commonLogin.localizedString()
+        passwordLabel.text = ResourceText.commonPassword.localizedString()
+        autoLoadLabel.text = ResourceText.addAutoload.localizedString()
+        autoLoadPageLabel.text = ResourceText.addAutoloadPage.localizedString()
+        paramLabel.text = ResourceText.addParam.localizedString()
+        addButton.setTitle(ResourceText.commonAdd.localizedString(), for: .normal)
+    }
+    
     private func configure() {
         deleteImage.isHidden = true
         deleteButton.isHidden = true
-        addButton.setTitle("Add URL", for: .normal)
         headerView.backgroundColor = ResourceColor.headerView
         DropdownDomain.anchorView = dropDownDomainButton
         DropdownDomain.dataSource = DropdownData.dropdownDomain
@@ -104,18 +123,18 @@ class UrlDetailViewController: UIViewController, didSeclectImage {
     
     func configEditController() {
         if let index = self.index {
-            headerTitle.text = "Edit Url"
-            addButton.setTitle("Edit URL", for: .normal)
+            headerTitle.text = ResourceText.updateURL.localizedString()
+            addButton.setTitle(ResourceText.updateURL.localizedString(), for: .normal)
             deleteImage.isHidden = false
             deleteButton.isHidden = false
             IPDomainTextField.text = self.model[index].domain ?? ""
             if let protocols = self.model[index].protocols {
                 switch protocols {
-                case "http":
+                case ResourceText.addHTTP.localizedString():
                     DropdownDomain.selectRow(0)
-                case "https":
+                case ResourceText.addHTTPS.localizedString():
                     DropdownDomain.selectRow(1)
-                case "rtsp":
+                case ResourceText.addRTSP.localizedString():
                     DropdownDomain.selectRow(2)
                 default:
                     dropDownDomainButton.setTitle(self.model[index].protocols ?? "-", for: .normal)
@@ -128,17 +147,17 @@ class UrlDetailViewController: UIViewController, didSeclectImage {
             SwitchAutoLoadUrl.isOn = self.model[index].autoLoad ?? false
             if let autoLoadPage = self.model[index].autoLoadPage {
                 switch autoLoadPage {
-                case "Touch":
+                case ResourceText.addAutoloadPageTouch.localizedString():
                     DropdownHome.selectRow(0)
-                case "Scada-Vis":
+                case ResourceText.addAutoloadPageScadaVis.localizedString():
                     DropdownHome.selectRow(1)
-                case "Schedulers":
+                case ResourceText.addAutoloadPageSchedulers.localizedString():
                     DropdownHome.selectRow(2)
-                case "Mosaic":
+                case ResourceText.addAutoloadPageMosaic.localizedString():
                     DropdownHome.selectRow(3)
-                case "Assistant":
+                case ResourceText.addAutoloadPageAssistant.localizedString():
                     DropdownHome.selectRow(4)
-                case "Premium":
+                case ResourceText.addAutoloadPagePremium.localizedString():
                     DropdownHome.selectRow(5)
                 default:
                     dropDownHomeButton.setTitle(self.model[index].autoLoadPage ?? "-", for: .normal)
@@ -178,10 +197,8 @@ class UrlDetailViewController: UIViewController, didSeclectImage {
         let url = protocols + subDomain + IPDomain
         if deleteButton.isHidden {
             if domainTextField == "" || nameTextField == ""  {
-                let alert = UIAlertController(title: "Thông Báo", message: "Bạn còn chưa điền đầy đủ hết thông tin, bạn hay" , preferredStyle: .alert)
-                let defaultAction: UIAlertAction = UIAlertAction(title: "ok".localized, style: .default, handler:nil)
-                alert.addAction(defaultAction)
-                self.present(alert, animated: true)
+                let alert = UIAlertController()
+                alert.showAlert(title: ResourceText.commonAlert.localizedString(), message: ResourceText.addAlertFillInfo.localizedString(), buttonAction: ResourceText.commonClose.localizedString(), controller: self)
             } else {
                 let task = ModelsUrl(domain: IPDomainTextField.text, protocols: DropdownDomain.selectedItem, name: nameTextfield.text, user: accTextfield.text, password: passTextField.text, icon: convertImage, autoLoad: SwitchAutoLoadUrl.isOn, autoLoadPage: DropdownHome.selectedItem, params: paramTextfield.text, url: url)
                 do {

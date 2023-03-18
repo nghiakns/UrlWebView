@@ -1,11 +1,10 @@
 /* 
-  Localizable(English).strings
+  Localizable.strings
   WebView
 
-  Created by Kim Nghĩa on 01/03/2023.
+  Created by Kim Nghĩa on 18/03/2023.
   
 */
-
 "Common.Ok" = "OK";
 "Common.Cancel" = "CANCEL";
 "Common.Next" = "NEXT";
@@ -22,8 +21,13 @@
 "Common.Name" = "Name";
 "Common.Email" = "Email";
 "Common.Add" = "Add";
+"Common.Alert" = "Alert";
+"Common.Alert.Error" = "Check your internet connect and try again!";
 
 "Home.Title" = "Home";
+"Home.Alert.LoginSuccess" = "Login successfull!";
+"Home.Alert.ChangeLanguage" = "Change language successfull!";
+"Home.Alert.UrlOrNetworkError" = "Check your url or network connection and try again!";
 
 "Setting.Title" = "Login";
 "Setting.Notice" = "If you have purchased an upgrade package, enter your credentials below to enable addition features";
@@ -31,14 +35,16 @@
 "Setting.Language.VietNam" = "Vietnamese";
 "Setting.Language.English" = "English";
 "Setting.ResetPassword" = "Reset Password";
+"Setting.Alert.LogoutSuccess" = "Logout successfully!";
+"Setting.Alert.ResetPassSuccess" = "Reset password successfully!";
 
 "Network.Response.Success" = "welcomergok";
-"Network.Popup.Title.Success" = "Login Successfully";
 
 "Add.Title" = "Add URL";
 "Add.Domain" = "IP address or domain";
-"Add.HTTPS" = "HTTPS";
-"Add.RTSP" = "RTSP";
+"Add.HTTP" = "http";
+"Add.HTTPS" = "https";
+"Add.RTSP" = "rtsp";
 "Add.Autoload" = "Autoload";
 "Add.AutoloadPage" = "Autoload Page";
 "Add.AutoloadPage.Touch" = "Touch";
@@ -49,8 +55,6 @@
 "Add.AutoloadPage.Premium" = "Premium";
 "Add.Param" = "Params";
 "Add.Icon" = "Icon";
+"Add.Alert.FillInfo" = "Please fill ip address/domain and name!";
 
 "UpdateURL" = "Update URL";
-
-
-
