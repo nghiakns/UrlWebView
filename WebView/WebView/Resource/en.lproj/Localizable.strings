@@ -58,3 +58,4 @@
 "Add.Alert.FillInfo" = "Please fill ip address/domain and name!";
 
 "UpdateURL" = "Update URL";
+"UdateURL.Alert.DeleteURL" = "Are you sure delete URL?";

@@ -68,6 +68,7 @@ enum ResourceText: String {
     case addAlertFillInfo = "Add.Alert.FillInfo"
 
     case updateURL = "UpdateURL"
+    case updateURLDeleteURL = "UdateURL.Alert.DeleteURL"
     
     func localizedString() -> String {
         let lang = WebViewUserDefault.getDropdownLanguage()

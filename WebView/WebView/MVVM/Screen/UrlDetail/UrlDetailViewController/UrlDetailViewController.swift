@@ -248,15 +248,23 @@ class UrlDetailViewController: UIViewController, didSeclectImage {
     @IBAction func deleteButton(_ sender: Any) {
         if let index = self.index {
             let task = model[index]
-            do {
-                try urlSevices.removeTask(task: task, index: index)
-                self.navigationController?.popViewController(animated: true)
-            } catch let error{
-                print(error)
+            let alert = UIAlertController()
+            alert.showAlertConfirm(message: ResourceText.updateURLDeleteURL.localizedString(), controller: self) { isDelete in
+                if isDelete {
+                    do {
+                        try self.urlSevices.removeTask(task: task, index: index)
+                        self.navigationController?.popViewController(animated: true)
+                    } catch let error{
+                        print(error)
+                    }
+                } else {
+                    alert.dismiss(animated: true)
+                }
             }
+            
+            
         }
     }
-    
 }
 
 

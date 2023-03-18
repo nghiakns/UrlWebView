@@ -58,3 +58,4 @@
 "Add.Alert.FillInfo" = "Hãy điền đầy đủ địa chỉ ip/tên miền và tên!";
 
 "UpdateURL" = "Cập nhật URL";
+"UdateURL.Alert.DeleteURL" = "Bạn chắc chắn muốn xoá URL?";
