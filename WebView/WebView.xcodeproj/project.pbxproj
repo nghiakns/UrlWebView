@@ -34,7 +34,6 @@
 		D1ECB36629B6D727005F755D /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ECB36529B6D727005F755D /* SettingViewController.swift */; };
 		D1ECB36C29B712D1005F755D /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ECB36B29B712D1005F755D /* AlertViewController.swift */; };
 		D1F4907C29C4E6E300E5A97E /* WebviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F4907B29C4E6E300E5A97E /* WebviewViewController.swift */; };
-		D1F4908229C5B5BE00E5A97E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D1F4908429C5B5BE00E5A97E /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,8 +67,6 @@
 		D1ECB36529B6D727005F755D /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		D1ECB36B29B712D1005F755D /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 		D1F4907B29C4E6E300E5A97E /* WebviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebviewViewController.swift; sourceTree = "<group>"; };
-		D1F4908329C5B5BE00E5A97E /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
-		D1F4908529C5B5C200E5A97E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E443ABB69297A42EE3DCF1D5 /* Pods-WebView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebView.release.xcconfig"; path = "Target Support Files/Pods-WebView/Pods-WebView.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -137,14 +134,6 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		D112957129AF296200E262FA /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				D1F4908429C5B5BE00E5A97E /* Localizable.strings */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
 		D12CF04E29B9C02B00C5319C /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -191,7 +180,6 @@
 			isa = PBXGroup;
 			children = (
 				D1D485F529B587C100C47B72 /* Common */,
-				D112957129AF296200E262FA /* Resources */,
 				D1D485F629B5884800C47B72 /* MVVM */,
 				D187821029A628810085B86F /* AppDelegate.swift */,
 				D187821229A628810085B86F /* SceneDelegate.swift */,
@@ -409,7 +397,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D187821D29A628850085B86F /* LaunchScreen.storyboard in Resources */,
-				D1F4908229C5B5BE00E5A97E /* Localizable.strings in Resources */,
 				D187821A29A628850085B86F /* Assets.xcassets in Resources */,
 				D187821829A628810085B86F /* Main.storyboard in Resources */,
 				52107A5629B88B7900A3A45E /* AlertIconCollectionViewCell.xib in Resources */,
@@ -507,15 +494,6 @@
 				D187821C29A628850085B86F /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		D1F4908429C5B5BE00E5A97E /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D1F4908329C5B5BE00E5A97E /* vi */,
-				D1F4908529C5B5C200E5A97E /* en */,
-			);
-			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
