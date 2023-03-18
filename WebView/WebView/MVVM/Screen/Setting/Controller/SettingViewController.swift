@@ -52,7 +52,7 @@ class SettingViewController: UIViewController {
         resetPasswordButton.setTitle(ResourceText.settingResetpass.localizedString(), for: .normal)
         dropDown.anchorView = dropDownButton
         dropDown.dataSource = DropdownData.languageDropdown
-        if WebViewUserDefault.getDropdownLanguage() == "eng" {
+        if WebViewUserDefault.getDropdownLanguage() == "en" {
             dropDown.selectRow(1)
             dropDownButton.setTitle(ResourceText.settingLanguageEnglish.localizedString(), for: .normal)
         } else {
@@ -65,7 +65,7 @@ class SettingViewController: UIViewController {
         dropDownButton.layer.masksToBounds = true
         dropDown.selectionAction = { [weak self] (index: Int, item: String) in
             self?.dropDownButton.setTitle(item, for: .normal)
-            WebViewUserDefault.saveDropdownLanguage(item: "English")
+            WebViewUserDefault.saveDropdownLanguage(item: "en")
         }
         languageDropdownImage.setImageColor(color: UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 1))
         headerView.backgroundColor = ResourceColor.headerView
@@ -102,9 +102,9 @@ class SettingViewController: UIViewController {
     @IBAction func nextButton(_ sender: Any) {
         self.invicator.startAnimating()
         if dropDown.selectedItem == ResourceText.settingLanguageEnglish.localizedString() {
-            WebViewUserDefault.saveDropdownLanguage(item: "eng")
+            WebViewUserDefault.saveDropdownLanguage(item: "en")
         } else {
-            WebViewUserDefault.saveDropdownLanguage(item: "vie")
+            WebViewUserDefault.saveDropdownLanguage(item: "vi")
         }
         viewmodel.login(eventHandle: EventHandle.login.getEventHandle(), email: emailTxtField.text ?? "", password: passwordTxtField.text ?? "", language: dropDown.selectedItem ?? "", phoneName: phoneName, uID: uID, model: model, completion: { isSuccess, mess  in
             if isSuccess {
