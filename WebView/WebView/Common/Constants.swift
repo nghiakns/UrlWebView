@@ -10,66 +10,30 @@ import Foundation
 struct DropdownData {
     
     static let dropdownDomain = [
-        "http".localized,
-        "https".localized,
-        "rtsp".localized,
+        ResourceText.addHTTP.localizedString(),
+        ResourceText.addHTTPS.localizedString(),
+        ResourceText.addRTSP.localizedString(),
     ]
     
     static let homeDropDown = [
-        "Touch".localized,
-        "Scada-Vis".localized,
-        "Schedulers".localized,
-        "Mosaic".localized
+        ResourceText.addAutoloadPageTouch.localizedString(),
+        ResourceText.addAutoloadPageScadaVis.localizedString()
+        ResourceText.addAutoloadPageSchedulers.localizedString(),
+        ResourceText.addAutoloadPageMosaic.localizedString()
     ]
     
     static let homeDropDownLogin = [
-        "Touch".localized,
-        "Scada-Vis".localized,
-        "Schedulers".localized,
-        "Mosaic".localized,
-        "Assistant".localized,
-        "Premium".localized,
+        ResourceText.addAutoloadPageTouch.localizedString(),
+        ResourceText.addAutoloadPageScadaVis.localizedString(),
+        ResourceText.addAutoloadPageSchedulers.localizedString(),
+        ResourceText.addAutoloadPageMosaic.localizedString(),
+        ResourceText.addAutoloadPageAssistant.localizedString(),
+        ResourceText.addAutoloadPagePremium.localizedString()
     ]
     
     static let languageDropdown = [
         ResourceText.settingLanguageVietNam.localizedString(),
         ResourceText.settingLanguageEnglish.localizedString()
     ]
-    
-    static func getInspectionTimeWithInterval(interval: Double) -> String {
-        switch interval {
-        case 1:
-            return "http".localized
-        case 2:
-            return "https".localized
-        case 3:
-            return "rtsp".localized
-        case 4:
-            return "4seconds".localized
-        default:
-            return "http".localized
-        }
-    }
-    
-    static func getHomeDropDown(interval: Double) -> String {
-        switch interval {
-        case 1:
-            return "-".localized
-        case 2:
-            return "Touch".localized
-        case 3:
-            return "Scada-Vis".localized
-        case 4:
-            return "Schedulers".localized
-        case 5:
-            return "Mosaic".localized
-        case 6:
-            return "Assistant".localized
-        case 7:
-            return "Premium".localized
-        default:
-            return "-".localized
-        }
-    }
     
 }
