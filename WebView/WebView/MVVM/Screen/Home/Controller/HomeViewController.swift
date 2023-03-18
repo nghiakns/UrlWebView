@@ -75,7 +75,7 @@ class HomeViewController: UIViewController, WKUIDelegate, AlertCallBack {
     
     func config() {
         headerView.backgroundColor = ResourceColor.headerView
-        homeTitle.text = "Home"
+        homeTitle.text = ResourceText.homeTitle.localizedString()
         homeTitle.textColor = .white
         invicator.center = view.center
         invicator.style = UIActivityIndicatorView.Style.large

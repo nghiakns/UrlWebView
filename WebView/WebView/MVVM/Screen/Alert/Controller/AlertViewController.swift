@@ -25,19 +25,14 @@ class AlertViewController: UIViewController {
     func config() {
         alertView.layer.cornerRadius = 5
         closeButton.backgroundColor = ResourceColor.headerView
-        closeButton.setTitle("Close", for: .normal)
+        closeButton.setTitle(ResourceText.commonClose.localizedString(), for: .normal)
+        alertTitle.text = ResourceText.commonInfo.localizedString()
         closeButton.setTitleColor(.white, for: .normal)
         closeButton.layer.cornerRadius = 5
         alertView.layer.borderWidth = 2
-        alertView.layer.borderColor = CGColor(red: 76/255, green: 76/255, blue: 76/255, alpha: 1)
     }
     
     @IBAction func closeButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
-    }
-    
-    @IBAction func AlertTapButton(_ sender: Any) {
-//        guard let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AlertIconViewController") as? AlertIconViewController else { return }
-//        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

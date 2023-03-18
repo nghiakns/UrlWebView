@@ -32,6 +32,13 @@ class UrlDetailViewController: UIViewController, didSeclectImage {
     @IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var deleteImage: UIImageView!
     @IBOutlet weak var headerTitle: UILabel!
+    @IBOutlet weak var domainLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var loginLabel: UILabel!
+    @IBOutlet weak var passwordLabel: UILabel!
+    @IBOutlet weak var autoLoadLabel: UILabel!
+    @IBOutlet weak var autoLoadPageLabel: UILabel!
+    @IBOutlet weak var paramLabel: UILabel!
     
     var model: [ModelsUrl] = []
     let DropdownDomain = DropDown()
@@ -51,6 +58,18 @@ class UrlDetailViewController: UIViewController, didSeclectImage {
     func didSeclectImage(image: UIImage) {
         self.iconImage.image = image
         imageIcon = image
+    }
+    
+    func settext() {
+        headerTitle.text = ResourceText.addTitle.localizedString()
+        domainLabel.text = ResourceText.addDomain.localizedString()
+        nameLabel.text = ResourceText.commonName.localizedString()
+        loginLabel.text = ResourceText.commonLogin.localizedString()
+        passwordLabel.text = ResourceText.commonPassword.localizedString()
+        autoLoadLabel.text = ResourceText.addAutoload.localizedString()
+        autoLoadPageLabel.text = ResourceText.addAutoloadPage.localizedString()
+        paramLabel.text = ResourceText.addParam.localizedString()
+        addButton.setTitle(ResourceText.commonAdd, for: .normal)
     }
     
     private func configure() {

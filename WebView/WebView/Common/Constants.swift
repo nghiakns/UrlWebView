@@ -32,8 +32,8 @@ struct DropdownData {
     ]
     
     static let languageDropdown = [
-        "Vietnamese".localized,
-        "English".localized
+        ResourceText.settingLanguageVietNam.localizedString(),
+        ResourceText.settingLanguageEnglish.localizedString()
     ]
     
     static func getInspectionTimeWithInterval(interval: Double) -> String {

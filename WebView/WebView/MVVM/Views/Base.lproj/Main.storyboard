@@ -606,8 +606,11 @@
                         <outlet property="SwitchAutoLoadUrl" destination="Rta-7d-WLo" id="yv7-0O-TiI"/>
                         <outlet property="accTextfield" destination="aeO-vS-TKa" id="oQv-EG-0JS"/>
                         <outlet property="addButton" destination="fhh-j2-2Rg" id="8K8-23-gz7"/>
+                        <outlet property="autoLoadLabel" destination="vcE-vh-hjk" id="T6T-Rw-vbh"/>
+                        <outlet property="autoLoadPageLabel" destination="Uin-7d-b9a" id="k0o-Jg-lxR"/>
                         <outlet property="deleteButton" destination="R00-G8-sUq" id="WAw-ug-aTU"/>
                         <outlet property="deleteImage" destination="Frq-S2-NTk" id="eo7-MW-dAW"/>
+                        <outlet property="domainLabel" destination="rs5-nF-onG" id="3nS-by-9sC"/>
                         <outlet property="domainView" destination="6gD-4T-Ohk" id="Be4-XS-8ng"/>
                         <outlet property="dropDownDomainButton" destination="nZg-gX-zgF" id="3D8-Z8-hzn"/>
                         <outlet property="dropDownHomeButton" destination="Fmt-js-ZUU" id="Pga-Ug-lcj"/>
@@ -617,9 +620,13 @@
                         <outlet property="iconImage" destination="Glo-Ub-n7W" id="PY3-yE-3Ls"/>
                         <outlet property="imageDropDownI" destination="8Pf-tJ-v3f" id="eKu-rO-tnZ"/>
                         <outlet property="imageHome" destination="e48-e8-TL2" id="sci-SB-kip"/>
+                        <outlet property="loginLabel" destination="Kk2-Ff-50D" id="MLw-m7-dUJ"/>
+                        <outlet property="nameLabel" destination="gMK-oI-1mG" id="Qth-8K-8YM"/>
                         <outlet property="nameTextfield" destination="1YK-Z9-VKs" id="WVE-Nf-I78"/>
+                        <outlet property="paramLabel" destination="FBp-Dl-OR4" id="Qjm-ZB-7qf"/>
                         <outlet property="paramTextfield" destination="hdK-VG-uds" id="IfN-Fy-Nmm"/>
                         <outlet property="passTextField" destination="UvE-Q1-YZf" id="6cy-a5-ikj"/>
+                        <outlet property="passwordLabel" destination="52K-ff-I2m" id="cdM-Gx-pF4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5r4-2v-gcp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1021,6 +1028,7 @@
                         <outlet property="passwordLabel" destination="qce-d0-llc" id="5tQ-dn-Pwe"/>
                         <outlet property="passwordTxtField" destination="Bm4-at-EBq" id="R8A-T6-Kgs"/>
                         <outlet property="resetPasswordButton" destination="brq-SP-ZaE" id="1KO-Jg-QdE"/>
+                        <outlet property="settingTitle" destination="I2O-q8-e4D" id="SLc-9O-raI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cl0-yn-Ksc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
