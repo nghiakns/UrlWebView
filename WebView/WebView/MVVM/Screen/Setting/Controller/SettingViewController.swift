@@ -65,7 +65,7 @@ class SettingViewController: UIViewController {
         dropDownButton.layer.masksToBounds = true
         dropDown.selectionAction = { [weak self] (index: Int, item: String) in
             self?.dropDownButton.setTitle(item, for: .normal)
-            WebViewUserDefault.saveDropdownLanguage(item: "en")
+//            WebViewUserDefault.saveDropdownLanguage(item: "en")
         }
         languageDropdownImage.setImageColor(color: UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 1))
         headerView.backgroundColor = ResourceColor.headerView
@@ -109,7 +109,7 @@ class SettingViewController: UIViewController {
     @IBAction func nextButton(_ sender: Any) {
         self.invicator.startAnimating()
         var language = ""
-        if dropDown.selectedItem == ResourceText.settingLanguageEnglish.localizedString() {
+        if dropDown.indexForSelectedRow == 1 {
             WebViewUserDefault.saveDropdownLanguage(item: "en")
             language = "eng"
         } else {

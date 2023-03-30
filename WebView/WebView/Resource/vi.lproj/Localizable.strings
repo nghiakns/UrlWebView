@@ -32,8 +32,8 @@
 "Setting.Title" = "Đăng nhập";
 "Setting.Notice" = "Nếu bạn đã mua gói tài khoản nâng cao, xin hãy nhập thông tin bên dưới để kích hoạt các tính năng mở rộng";
 "Setting.Language" = "Ngôn ngữ";
-"Setting.Language.VietNam" = "Tiếng Việt";
-"Setting.Language.English" = "Tiếng Anh";
+"Setting.Language.VietNam" = "Vietnamese";
+"Setting.Language.English" = "English";
 "Setting.ResetPassword" = "Lấy lại mật khẩu";
 "Setting.Alert.LogoutSuccess" = "Đăng xuất thành công!";
 "Setting.Alert.ResetPassSuccess" = "Lấy lại mật khẩu thành công!";
