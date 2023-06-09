@@ -12,7 +12,7 @@ enum SettingMode: Int {
     case autoload
 }
 class UrlDetailViewController: UIViewController, didSeclectImage {
-
+    
     @IBOutlet weak var imageDropDownI: UIImageView!
     @IBOutlet weak var dropDownDomainButton: UIButton!
     @IBOutlet weak var IPView: UIView!
@@ -175,11 +175,9 @@ class UrlDetailViewController: UIViewController, didSeclectImage {
             } else {
                 iconImage.image = UIImage(named: "logo_gmt")
             }
-        } 
-        
+        }
     }
     
-
     func coradius(textfield: UITextField) {
         textfield.layer.borderWidth = 1
         textfield.layer.cornerRadius = 25
@@ -187,14 +185,34 @@ class UrlDetailViewController: UIViewController, didSeclectImage {
     }
     
     @IBAction func didTapAddUrl(_ sender: Any) {
-        let domainTextField = IPDomainTextField.text
+        let domainTextField = IPDomainTextField.text ?? ""
         let nameTextField = nameTextfield.text
         let data = iconImage.image
         let convertImage = data?.jpegData(compressionQuality: 1)?.base64EncodedString() ?? ""
         let protocols = DropdownDomain.selectedItem ?? ""
-        let IPDomain = IPDomainTextField.text ?? ""
         let subDomain = String("://")
-        let url = protocols + subDomain + IPDomain
+        let user = accTextfield.text ?? ""
+        let password = passTextField.text ?? ""
+        let param = paramTextfield.text ?? ""
+        var url = "\(protocols)\(subDomain)\(user):\(password)@\(domainTextField)\(param)"
+        switch DropdownHome.selectedItem {
+        case "Touch":
+            url = "\(protocols)\(subDomain)\(user):\(password)@\(domainTextField)/scada-vis/touch\(param)"
+        case "Scada-Vis":
+            url = "\(protocols)\(subDomain)\(user):\(password)@\(domainTextField)/scada-vis\(param)"
+        case "Schedulers":
+            url = "\(protocols)\(subDomain)\(user):\(password)@\(domainTextField)/scada-vis/schedulers\(param)"
+        case "Mosaic":
+            url = "\(protocols)\(subDomain)\(user):\(password)@\(domainTextField)/scada-vis/apps/data/mosaic30\(param)"
+        case "Assistant":
+            url = "\(protocols)\(subDomain)\(user):\(password)@\(domainTextField)/scada-vis/public/raiassistant.lp\(param)"
+        case "Premium":
+            url = "\(protocols)\(subDomain)\(user):\(password)@\(domainTextField)/scada-vis/user/premium.lp\(param)"
+        case .none:
+            break
+        case .some(_):
+            break
+        }
         if deleteButton.isHidden {
             if domainTextField == "" || nameTextField == ""  {
                 let alert = UIAlertController()
@@ -261,17 +279,15 @@ class UrlDetailViewController: UIViewController, didSeclectImage {
                     alert.dismiss(animated: true)
                 }
             }
-            
-            
         }
     }
 }
 
 
 extension UIImageView {
-  func setImageColor(color: UIColor) {
-    let templateImage = self.image?.withRenderingMode(.alwaysTemplate)
-    self.image = templateImage
-    self.tintColor = color
-  }
+    func setImageColor(color: UIColor) {
+        let templateImage = self.image?.withRenderingMode(.alwaysTemplate)
+        self.image = templateImage
+        self.tintColor = color
+    }
 }

@@ -8,7 +8,7 @@
 import UIKit
 import WebKit
 class HomeViewController: UIViewController, WKUIDelegate, AlertCallBack {
-
+    
     @IBOutlet weak var tableview: UITableView!
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var homeTitle: UILabel!
@@ -29,7 +29,7 @@ class HomeViewController: UIViewController, WKUIDelegate, AlertCallBack {
         configTableView()
         autoLoad()
     }
-
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         tableview.delegate = self
@@ -55,20 +55,10 @@ class HomeViewController: UIViewController, WKUIDelegate, AlertCallBack {
     func autoLoad() {
         let autoLoad = tasks.first(where: { $0.autoLoad == true})
         if autoLoad != nil {
-            self.invicator.startAnimating()
             guard let url = autoLoad?.url else { return }
-            viewModel.checkLoadView(url: url) { canLoaded in
-                if canLoaded {
-                    guard let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "webview") as? WebviewViewController else { return }
-                    vc.urlString = url
-                    self.invicator.stopAnimating()
-                    self.navigationController?.pushViewController(vc, animated: true)
-                } else {
-                    self.invicator.stopAnimating()
-                    let alert = UIAlertController()
-                    alert.showAlert(title: ResourceText.commonAlert.localizedString(), message: ResourceText.homeAlertUrlOrNetworkError.localizedString(), buttonAction: ResourceText.commonClose.localizedString(), controller: self)
-                }
-            }
+            guard let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "webview") as? WebviewViewController else { return }
+            vc.urlString = url
+            self.navigationController?.pushViewController(vc, animated: true)
         }
     }
     
@@ -136,7 +126,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         } else {
             cell.iconUrlImageView.image = UIImage(named: "logo_gmt")
         }
-        cell.didClickEditButton = { 
+        cell.didClickEditButton = {
             guard let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "UrlDetailViewController") as? UrlDetailViewController else { return }
             vc.model = self.tasks
             vc.index = indexPath.row
@@ -152,18 +142,14 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let url = tasks[indexPath.row].url else { return }
         self.invicator.startAnimating()
-        viewModel.checkLoadView(url: url) { canLoaded in
-            if canLoaded {
-                guard let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "webview") as? WebviewViewController else { return }
-                vc.urlString = url
-                self.invicator.stopAnimating()
-                self.navigationController?.pushViewController(vc, animated: true)
-            } else {
-                self.invicator.stopAnimating()
-                let alert = UIAlertController()
-                alert.showAlert(title: ResourceText.commonAlert.localizedString(), message: ResourceText.homeAlertUrlOrNetworkError.localizedString(), buttonAction: ResourceText.commonClose.localizedString(), controller: self)
-            }
-        }
+        let username = tasks[indexPath.row].user ?? ""
+        let password = tasks[indexPath.row].password ?? ""
+        guard let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "webview") as? WebviewViewController else { return }
+        vc.userName = username
+        vc.passWord = password
+        vc.urlString = url
+        self.invicator.stopAnimating()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 
