@@ -206,7 +206,7 @@ class UrlDetailViewController: UIViewController, didSeclectImage {
             if  user.isEmpty || password.isEmpty {
                 url = "\(protocols)\(subDomain)\(domainTextField)/public/raiassistant.lp\(param)"
             } else {
-                url = "\(protocols)\(subDomain)\(user):\(password)@\(domainTextField)/public/raiassista1nt.lp\(param)"
+                url = "\(protocols)\(subDomain)\(user):\(password)@\(domainTextField)/public/raiassistant.lp\(param)"
             }
         case "Premium":
             if  user.isEmpty || password.isEmpty {
