@@ -105,8 +105,6 @@ extension String {
             return 1
         case "https".localized:
             return 2
-        case "rtsp".localized:
-            return 3
         default:
             return 0
         }

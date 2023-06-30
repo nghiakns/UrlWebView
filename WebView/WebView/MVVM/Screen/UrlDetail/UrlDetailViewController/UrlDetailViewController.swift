@@ -134,8 +134,6 @@ class UrlDetailViewController: UIViewController, didSeclectImage {
                     DropdownDomain.selectRow(0)
                 case ResourceText.addHTTPS.localizedString():
                     DropdownDomain.selectRow(1)
-                case ResourceText.addRTSP.localizedString():
-                    DropdownDomain.selectRow(2)
                 default:
                     dropDownDomainButton.setTitle(self.model[index].protocols ?? "-", for: .normal)
                 }
@@ -205,9 +203,17 @@ class UrlDetailViewController: UIViewController, didSeclectImage {
         case "Mosaic":
             url = "\(protocols)\(subDomain)\(user):\(password)@\(domainTextField)/scada-vis/apps/data/mosaic30\(param)"
         case "Assistant":
-            url = "\(protocols)\(subDomain)\(user):\(password)@\(domainTextField)/scada-vis/public/raiassistant.lp\(param)"
+            if  user.isEmpty || password.isEmpty {
+                url = "\(protocols)\(subDomain)\(domainTextField)/public/raiassistant.lp\(param)"
+            } else {
+                url = "\(protocols)\(subDomain)\(user):\(password)@\(domainTextField)/public/raiassista1nt.lp\(param)"
+            }
         case "Premium":
-            url = "\(protocols)\(subDomain)\(user):\(password)@\(domainTextField)/scada-vis/user/premium.lp\(param)"
+            if  user.isEmpty || password.isEmpty {
+                url = "\(protocols)\(subDomain)\(domainTextField)/user/premium.lp\(param)"
+            } else {
+                url = "\(protocols)\(subDomain)\(user):\(password)@\(domainTextField)/user/premium.lp\(param)"
+            }
         case .none:
             break
         case .some(_):

@@ -12,7 +12,6 @@ struct DropdownData {
     static let dropdownDomain = [
         ResourceText.addHTTP.localizedString(),
         ResourceText.addHTTPS.localizedString(),
-        ResourceText.addRTSP.localizedString(),
     ]
     
     static let homeDropDown = [
