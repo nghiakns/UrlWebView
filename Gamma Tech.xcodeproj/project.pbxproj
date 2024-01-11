@@ -12,6 +12,7 @@
 		52107A5629B88B7900A3A45E /* AlertIconCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52107A5429B88B7900A3A45E /* AlertIconCollectionViewCell.xib */; };
 		52107A5929B89F8700A3A45E /* ImageModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52107A5829B89F8700A3A45E /* ImageModels.swift */; };
 		52C465A429B9E094001EF5E8 /* ModelSevices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C465A329B9E094001EF5E8 /* ModelSevices.swift */; };
+		A799EA50CFCC03EE767D3D24 /* Pods_Gamma_Tech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B63790E3DB0BEA8A4615E24B /* Pods_Gamma_Tech.framework */; };
 		D12CF05029B9C04A00C5319C /* UrlModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12CF04F29B9C04A00C5319C /* UrlModels.swift */; };
 		D15AF8A529B8279600999DBA /* SettingViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15AF8A429B8279600999DBA /* SettingViewModels.swift */; };
 		D15AF8A829B82A3E00999DBA /* BaseApiRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15AF8A729B82A3E00999DBA /* BaseApiRepository.swift */; };
@@ -25,7 +26,6 @@
 		D187821D29A628850085B86F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D187821B29A628850085B86F /* LaunchScreen.storyboard */; };
 		D195910129C21AC000BB3B88 /* HomeViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = D195910029C21AC000BB3B88 /* HomeViewModels.swift */; };
 		D195910329C2221F00BB3B88 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = D195910229C2221F00BB3B88 /* Alert.swift */; };
-		D1AB1553D1189B1B28B20C45 /* Pods_WebView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66AD0855B488C316AC0DDE65 /* Pods_WebView.framework */; };
 		D1D485FC29B588B500C47B72 /* ResourceColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D485FB29B588B500C47B72 /* ResourceColor.swift */; };
 		D1D485FE29B58D0700C47B72 /* ResourceText.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D485FD29B58D0700C47B72 /* ResourceText.swift */; };
 		D1D8CF2229B869B500BC57D6 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D8CF2129B869B500BC57D6 /* UserDefaults.swift */; };
@@ -43,8 +43,10 @@
 		52107A5429B88B7900A3A45E /* AlertIconCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlertIconCollectionViewCell.xib; sourceTree = "<group>"; };
 		52107A5829B89F8700A3A45E /* ImageModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModels.swift; sourceTree = "<group>"; };
 		52C465A329B9E094001EF5E8 /* ModelSevices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelSevices.swift; sourceTree = "<group>"; };
-		66AD0855B488C316AC0DDE65 /* Pods_WebView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WebView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E738F551A67B49D6064B121 /* Pods-WebView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebView.debug.xcconfig"; path = "Target Support Files/Pods-WebView/Pods-WebView.debug.xcconfig"; sourceTree = "<group>"; };
+		743029BC30F68BB12922CAE6 /* Pods-Gamma Tech.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gamma Tech.debug.xcconfig"; path = "Target Support Files/Pods-Gamma Tech/Pods-Gamma Tech.debug.xcconfig"; sourceTree = "<group>"; };
+		93BB2386477BA32605D57CC5 /* Pods-Gamma Tech.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gamma Tech.release.xcconfig"; path = "Target Support Files/Pods-Gamma Tech/Pods-Gamma Tech.release.xcconfig"; sourceTree = "<group>"; };
+		B63790E3DB0BEA8A4615E24B /* Pods_Gamma_Tech.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gamma_Tech.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D12CF04F29B9C04A00C5319C /* UrlModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlModels.swift; sourceTree = "<group>"; };
 		D15AF8A429B8279600999DBA /* SettingViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModels.swift; sourceTree = "<group>"; };
 		D15AF8A729B82A3E00999DBA /* BaseApiRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseApiRepository.swift; sourceTree = "<group>"; };
@@ -78,7 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D1AB1553D1189B1B28B20C45 /* Pods_WebView.framework in Frameworks */,
+				A799EA50CFCC03EE767D3D24 /* Pods_Gamma_Tech.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,7 +125,7 @@
 		5536C290A5A1A5283A8D345E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				66AD0855B488C316AC0DDE65 /* Pods_WebView.framework */,
+				B63790E3DB0BEA8A4615E24B /* Pods_Gamma_Tech.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -133,6 +135,8 @@
 			children = (
 				6E738F551A67B49D6064B121 /* Pods-WebView.debug.xcconfig */,
 				E443ABB69297A42EE3DCF1D5 /* Pods-WebView.release.xcconfig */,
+				743029BC30F68BB12922CAE6 /* Pods-Gamma Tech.debug.xcconfig */,
+				93BB2386477BA32605D57CC5 /* Pods-Gamma Tech.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -435,7 +439,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-WebView-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Gamma Tech-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -448,15 +452,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-WebView/Pods-WebView-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Gamma Tech/Pods-Gamma Tech-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-WebView/Pods-WebView-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Gamma Tech/Pods-Gamma Tech-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WebView/Pods-WebView-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Gamma Tech/Pods-Gamma Tech-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -639,7 +643,7 @@
 		};
 		D187822229A628850085B86F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6E738F551A67B49D6064B121 /* Pods-WebView.debug.xcconfig */;
+			baseConfigurationReference = 743029BC30F68BB12922CAE6 /* Pods-Gamma Tech.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -672,7 +676,7 @@
 		};
 		D187822329A628850085B86F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E443ABB69297A42EE3DCF1D5 /* Pods-WebView.release.xcconfig */;
+			baseConfigurationReference = 93BB2386477BA32605D57CC5 /* Pods-Gamma Tech.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

@@ -1,1 +1,61 @@
+/*
+  Localizable.strings
+  WebView
 
+  Created by Kim Nghĩa on 18/03/2023.
+  
+*/
+"Common.Ok" = "OK";
+"Common.Cancel" = "CANCEL";
+"Common.Next" = "NEXT";
+"Common.Close" = "Close";
+"Common.Information" = "Contact";
+"Common.Confirmation" = "Confirmation";
+"Common.Warning" = "Warning";
+"Common.Back" = "Back";
+"Common.Yes" = "Yes";
+"Common.No" = "No";
+"Common.Loading" = "Loading…";
+"Common.Login" = "Login";
+"Common.Password" = "Password";
+"Common.Name" = "Name";
+"Common.Email" = "Email";
+"Common.Add" = "Add";
+"Common.Alert" = "Alert";
+"Common.Alert.Error" = "Check your internet connect and try again!";
+
+"Home.Title" = "Home";
+"Home.Alert.LoginSuccess" = "Login successfull!";
+"Home.Alert.ChangeLanguage" = "Change language successfull!";
+"Home.Alert.UrlOrNetworkError" = "Check your url or network connection and try again!";
+
+"Setting.Title" = "Login";
+"Setting.Notice" = "If you have purchased an upgrade package, enter your credentials below to enable addition features";
+"Setting.Language" = "Language";
+"Setting.Language.VietNam" = "Vietnamese";
+"Setting.Language.English" = "English";
+"Setting.ResetPassword" = "Reset Password";
+"Setting.Alert.LogoutSuccess" = "Logout successfully!";
+"Setting.Alert.ResetPassSuccess" = "Reset password successfully!";
+
+"Network.Response.Success" = "welcomergok";
+
+"Add.Title" = "Add URL";
+"Add.Domain" = "IP address or domain";
+"Add.HTTP" = "http";
+"Add.HTTPS" = "https";
+"Add.RTSP" = "rtsp";
+"Add.Autoload" = "Autoload";
+"Add.AutoloadPage" = "Autoload Page";
+"Add.AutoloadPage.Touch" = "Touch";
+"Add.AutoloadPage.ScadaVis" = "Scada-Vis";
+"Add.AutoloadPage.Schedulers" = "Schedulers";
+"Add.AutoloadPage.Mosaic" = "Mosaic";
+"Add.AutoloadPage.Assistant" = "Assistant";
+"Add.AutoloadPage.Premium" = "Premium";
+"Add.Param" = "Params";
+"Add.Icon" = "Icon";
+"Add.Alert.FillInfo" = "Please fill ip address/domain and name!";
+
+"UpdateURL" = "Update URL";
+"UdateURL.Alert.DeleteURL" = "Are you sure delete URL?";
