@@ -48,7 +48,7 @@
 		D12CF04F29B9C04A00C5319C /* UrlModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlModels.swift; sourceTree = "<group>"; };
 		D15AF8A429B8279600999DBA /* SettingViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModels.swift; sourceTree = "<group>"; };
 		D15AF8A729B82A3E00999DBA /* BaseApiRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseApiRepository.swift; sourceTree = "<group>"; };
-		D187820D29A628810085B86F /* WebView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WebView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D187820D29A628810085B86F /* Gamma Tech.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gamma Tech.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D187821029A628810085B86F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D187821229A628810085B86F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D187821429A628810085B86F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -164,7 +164,7 @@
 		D187820429A628810085B86F = {
 			isa = PBXGroup;
 			children = (
-				D187820F29A628810085B86F /* WebView */,
+				D187820F29A628810085B86F /* Gamma Tech */,
 				D187820E29A628810085B86F /* Products */,
 				A5B0CC7F275AF51FC3F94F53 /* Pods */,
 				5536C290A5A1A5283A8D345E /* Frameworks */,
@@ -174,12 +174,12 @@
 		D187820E29A628810085B86F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D187820D29A628810085B86F /* WebView.app */,
+				D187820D29A628810085B86F /* Gamma Tech.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D187820F29A628810085B86F /* WebView */ = {
+		D187820F29A628810085B86F /* Gamma Tech */ = {
 			isa = PBXGroup;
 			children = (
 				D1A06D1B29C5E13D00A2589E /* Resource */,
@@ -191,7 +191,7 @@
 				D187821B29A628850085B86F /* LaunchScreen.storyboard */,
 				D187821E29A628850085B86F /* Info.plist */,
 			);
-			path = WebView;
+			path = "Gamma Tech";
 			sourceTree = "<group>";
 		};
 		D19590FF29C21AA500BB3B88 /* ViewModels */ = {
@@ -350,9 +350,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D187820C29A628810085B86F /* WebView */ = {
+		D187820C29A628810085B86F /* Gamma Tech */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D187822129A628850085B86F /* Build configuration list for PBXNativeTarget "WebView" */;
+			buildConfigurationList = D187822129A628850085B86F /* Build configuration list for PBXNativeTarget "Gamma Tech" */;
 			buildPhases = (
 				A62D8E9C77D596468733A734 /* [CP] Check Pods Manifest.lock */,
 				D187820929A628810085B86F /* Sources */,
@@ -364,9 +364,9 @@
 			);
 			dependencies = (
 			);
-			name = WebView;
+			name = "Gamma Tech";
 			productName = WebView;
-			productReference = D187820D29A628810085B86F /* WebView.app */;
+			productReference = D187820D29A628810085B86F /* Gamma Tech.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -384,7 +384,7 @@
 					};
 				};
 			};
-			buildConfigurationList = D187820829A628810085B86F /* Build configuration list for PBXProject "WebView" */;
+			buildConfigurationList = D187820829A628810085B86F /* Build configuration list for PBXProject "Gamma Tech" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -398,7 +398,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D187820C29A628810085B86F /* WebView */,
+				D187820C29A628810085B86F /* Gamma Tech */,
 			);
 		};
 /* End PBXProject section */
@@ -649,7 +649,7 @@
 				DEVELOPMENT_TEAM = QZ88J9846Y;
 				EXCLUDED_ARCHS = "";
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = WebView/Info.plist;
+				INFOPLIST_FILE = "Gamma Tech/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -682,7 +682,7 @@
 				DEVELOPMENT_TEAM = QZ88J9846Y;
 				EXCLUDED_ARCHS = "";
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = WebView/Info.plist;
+				INFOPLIST_FILE = "Gamma Tech/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -706,7 +706,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D187820829A628810085B86F /* Build configuration list for PBXProject "WebView" */ = {
+		D187820829A628810085B86F /* Build configuration list for PBXProject "Gamma Tech" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D187821F29A628850085B86F /* Debug */,
@@ -715,7 +715,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D187822129A628850085B86F /* Build configuration list for PBXNativeTarget "WebView" */ = {
+		D187822129A628850085B86F /* Build configuration list for PBXNativeTarget "Gamma Tech" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D187822229A628850085B86F /* Debug */,
