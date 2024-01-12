@@ -46,6 +46,9 @@ class UrlDetailViewController: UIViewController, didSeclectImage {
     let urlSevices = ModelSevices()
     var imageIcon: UIImage?
     var index: Int? = nil
+    let phoneName = UIDevice.current.name
+    let modelDevice = UIDevice.current.model
+    let uID = UIDevice.current.identifierForVendor?.uuidString ?? ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -182,6 +185,52 @@ class UrlDetailViewController: UIViewController, didSeclectImage {
         textfield.layer.masksToBounds = true
     }
     
+    func getAdditionUrl(url: String, param: String) -> String {
+        var additionUrl = ""
+        let lang = WebViewUserDefault.getDropdownLanguage() == "en" ? "eng" : "vie"
+        let key = WebViewUserDefault.getKey()
+        let phoneNameRegex = phoneName.replacingOccurrences(of: " ", with: "")
+        if param.isEmpty {
+            additionUrl = "?key=\(key)&language=\(lang)&phonename=\(phoneNameRegex)&uID=\(uID)&model=\(modelDevice)"
+        } else {
+            additionUrl = "&key=\(key)&language=\(lang)&phonename=\(phoneNameRegex)&uID=\(uID)&model=\(modelDevice)"
+        }
+        return url + additionUrl
+    }
+    
+    func getUrl(protocols: String, subDomain: String, user: String, password: String, domainTextField: String, param: String) -> String {
+        switch DropdownHome.selectedItem {
+        case "Touch":
+            return "\(protocols)\(subDomain)\(user):\(password)@\(domainTextField)/scada-vis/touch\(param)"
+        case "Scada-Vis":
+            return "\(protocols)\(subDomain)\(user):\(password)@\(domainTextField)/scada-vis\(param)"
+        case "Schedulers":
+            return "\(protocols)\(subDomain)\(user):\(password)@\(domainTextField)/scada-vis/schedulers\(param)"
+        case "Mosaic":
+            return "\(protocols)\(subDomain)\(user):\(password)@\(domainTextField)/scada-vis/apps/data/mosaic30\(param)"
+        case "Assistant":
+            if  user.isEmpty || password.isEmpty {
+                let url = "\(protocols)\(subDomain)\(domainTextField)/public/raiassistant.lp\(param)"
+                return getAdditionUrl(url: url, param: param)
+            } else {
+                let url = "\(protocols)\(subDomain)\(user):\(password)@\(domainTextField)/public/raiassistant.lp\(param)"
+                return getAdditionUrl(url: url, param: param)
+            }
+        case "Premium":
+            if  user.isEmpty || password.isEmpty {
+                let url = "\(protocols)\(subDomain)\(domainTextField)/user/premium.lp\(param)"
+                return getAdditionUrl(url: url, param: param)
+            } else {
+                let url = "\(protocols)\(subDomain)\(user):\(password)@\(domainTextField)/user/premium.lp\(param)"
+                return getAdditionUrl(url: url, param: param)
+            }
+        case .none:
+            return "\(protocols)\(subDomain)\(user):\(password)@\(domainTextField)\(param)"
+        case .some(_):
+            return "\(protocols)\(subDomain)\(user):\(password)@\(domainTextField)\(param)"
+        }
+    }
+    
     @IBAction func didTapAddUrl(_ sender: Any) {
         let domainTextField = IPDomainTextField.text ?? ""
         let nameTextField = nameTextfield.text
@@ -192,33 +241,7 @@ class UrlDetailViewController: UIViewController, didSeclectImage {
         let user = accTextfield.text ?? ""
         let password = passTextField.text ?? ""
         let param = paramTextfield.text ?? ""
-        var url = "\(protocols)\(subDomain)\(user):\(password)@\(domainTextField)\(param)"
-        switch DropdownHome.selectedItem {
-        case "Touch":
-            url = "\(protocols)\(subDomain)\(user):\(password)@\(domainTextField)/scada-vis/touch\(param)"
-        case "Scada-Vis":
-            url = "\(protocols)\(subDomain)\(user):\(password)@\(domainTextField)/scada-vis\(param)"
-        case "Schedulers":
-            url = "\(protocols)\(subDomain)\(user):\(password)@\(domainTextField)/scada-vis/schedulers\(param)"
-        case "Mosaic":
-            url = "\(protocols)\(subDomain)\(user):\(password)@\(domainTextField)/scada-vis/apps/data/mosaic30\(param)"
-        case "Assistant":
-            if  user.isEmpty || password.isEmpty {
-                url = "\(protocols)\(subDomain)\(domainTextField)/public/raiassistant.lp\(param)"
-            } else {
-                url = "\(protocols)\(subDomain)\(user):\(password)@\(domainTextField)/public/raiassistant.lp\(param)"
-            }
-        case "Premium":
-            if  user.isEmpty || password.isEmpty {
-                url = "\(protocols)\(subDomain)\(domainTextField)/user/premium.lp\(param)"
-            } else {
-                url = "\(protocols)\(subDomain)\(user):\(password)@\(domainTextField)/user/premium.lp\(param)"
-            }
-        case .none:
-            break
-        case .some(_):
-            break
-        }
+        let url = getUrl(protocols: protocols, subDomain: subDomain, user: user, password: password, domainTextField: domainTextField, param: param)
         if deleteButton.isHidden {
             if domainTextField == "" || nameTextField == ""  {
                 let alert = UIAlertController()

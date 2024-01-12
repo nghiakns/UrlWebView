@@ -19,15 +19,20 @@ class WebviewViewController: UIViewController, WKNavigationDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         config()
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadWebview), name: UIApplication.willEnterForegroundNotification, object: nil)
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         guard let url = URL(string: urlString) else { return }
         self.webview.load(URLRequest(url: url))
         invicator.startAnimating()
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             self.invicator.stopAnimating()
         }
+    }
+    
+    @objc func reloadWebview() {
+        webview.reload()
     }
     
     func config() {

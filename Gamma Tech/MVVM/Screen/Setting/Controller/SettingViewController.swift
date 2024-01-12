@@ -28,9 +28,13 @@ class SettingViewController: UIViewController {
     @IBOutlet weak var languageDropdownImage: UIImageView!
     @IBOutlet weak var dropDownButton: UIButton!
     @IBOutlet weak var settingTitle: UILabel!
+    @IBOutlet weak var loginWithLabel: UILabel!
+    @IBOutlet weak var loginWithButton: UIButton!
+    @IBOutlet weak var loginWithImage: UIImageView!
     
     var invicator = UIActivityIndicatorView()
     let dropDown = DropDown()
+    let loginWithDropDown = DropDown()
     let viewmodel = SettingViewModels()
     let phoneName = UIDevice.current.name
     let model = UIDevice.current.model
@@ -40,6 +44,7 @@ class SettingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         config()
+        configLoginWith()
     }
     
     func config() {
@@ -47,8 +52,9 @@ class SettingViewController: UIViewController {
         nextButton.setTitle(ResourceText.commonNext.localizedString(), for: .normal)
         settingTitle.text = ResourceText.settingTitle.localizedString()
         descriptionText.text = ResourceText.settingNotice.localizedString()
-        passwordLabel.text = ResourceText.commonPassword.localizedString()
+        passwordLabel.text = ResourceText.commonKey.localizedString()
         languageLabel.text = ResourceText.settingLanguage.localizedString()
+        loginWithLabel.text = ResourceText.commonLogin.localizedString()
         resetPasswordButton.setTitle(ResourceText.settingResetpass.localizedString(), for: .normal)
         dropDown.anchorView = dropDownButton
         dropDown.dataSource = DropdownData.languageDropdown
@@ -83,6 +89,63 @@ class SettingViewController: UIViewController {
         view.addSubview(invicator)
     }
     
+    func configLoginWith() {
+        loginWithDropDown.anchorView = loginWithButton
+        loginWithDropDown.dataSource = DropdownData.typeOfLoginDropdown
+        loginWithButton.setTitle(ResourceText.settingKey.localizedString(), for: .normal)
+        loginWithDropDown.selectRow(0)
+        loginWithDropDown.selectionAction = {  [weak self] (index: Int, item: String) in
+            self?.loginWithButton.setTitle(item, for: .normal)
+            if index == 0 {
+                self?.emailLabel.text = ResourceText.commonDeviceAddr.localizedString()
+                self?.passwordLabel.text = ResourceText.commonKey.localizedString()
+            } else {
+                self?.emailLabel.text = ResourceText.commonEmail.localizedString()
+                self?.passwordLabel.text = ResourceText.commonPassword.localizedString()
+            }
+        }
+        loginWithButton.layer.borderColor = UIColor.lightGray.cgColor
+        loginWithButton.layer.borderWidth = 1
+        loginWithButton.layer.cornerRadius = loginWithButton.frame.height / 2
+        loginWithButton.layer.masksToBounds = true
+        loginWithImage.setImageColor(color: UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 1))
+    }
+    
+    func loginWithEmail(language: String) {
+        viewmodel.loginWithEmail(eventHandle: EventHandle.login.getEventHandle(), email: emailTxtField.text ?? "", password: passwordTxtField.text ?? "", language: language, phoneName: phoneName, uID: uID, model: model, completion: { [weak self] isSuccess, mess  in
+            if isSuccess {
+                self?.invicator.stopAnimating()
+                WebViewUserDefault.saveIsLogin(isLogin: true)
+                guard let delegate = self?.delegate else { return }
+                delegate.showAlert(message: mess, isShow: false)
+                self?.navigationController?.popViewController(animated: true)
+            } else {
+                self?.invicator.stopAnimating()
+                guard let delegate = self?.delegate else { return }
+                delegate.showAlert(message: mess, isShow: false)
+                self?.navigationController?.popViewController(animated: true)
+            }
+        })
+    }
+    
+    func loginWithDeviceAdd(language: String) {
+        viewmodel.loginWithDeviceAdd(deviceAdd: emailTxtField.text ?? "", key: passwordTxtField.text ?? "", lang: language, phoneName: phoneName, uID: uID, model: model) { [weak self] isSuccess, mess in
+            if isSuccess {
+                self?.invicator.stopAnimating()
+                WebViewUserDefault.saveIsLogin(isLogin: true)
+                WebViewUserDefault.setKey(key: self?.passwordTxtField.text ?? "")
+                guard let delegate = self?.delegate else { return }
+                delegate.showAlert(message: mess, isShow: false)
+                self?.navigationController?.popViewController(animated: true)
+            } else {
+                self?.invicator.stopAnimating()
+                guard let delegate = self?.delegate else { return }
+                delegate.showAlert(message: mess, isShow: false)
+                self?.navigationController?.popViewController(animated: true)
+            }
+        }
+    }
+    
     @IBAction func backButton(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
@@ -98,6 +161,7 @@ class SettingViewController: UIViewController {
         emailTxtField.text = ""
         passwordTxtField.text = ""
         WebViewUserDefault.saveIsLogin(isLogin: false)
+        WebViewUserDefault.setKey(key: "")
         let alert = UIAlertController()
         alert.showAlert(title: ResourceText.commonAlert.localizedString(), message: ResourceText.settingAlertLogoutSuccess.localizedString(), buttonAction: ResourceText.commonClose.localizedString(), controller: self)
     }
@@ -116,20 +180,11 @@ class SettingViewController: UIViewController {
             WebViewUserDefault.saveDropdownLanguage(item: "vi")
             language = "vie"
         }
-        viewmodel.login(eventHandle: EventHandle.login.getEventHandle(), email: emailTxtField.text ?? "", password: passwordTxtField.text ?? "", language: language, phoneName: phoneName, uID: uID, model: model, completion: { isSuccess, mess  in
-            if isSuccess {
-                self.invicator.stopAnimating()
-                WebViewUserDefault.saveIsLogin(isLogin: true)
-                guard let delegate = self.delegate else { return }
-                delegate.showAlert(message: mess, isShow: false)
-                self.navigationController?.popViewController(animated: true)
-            } else {
-                self.invicator.stopAnimating()
-                guard let delegate = self.delegate else { return }
-                delegate.showAlert(message: mess, isShow: false)
-                self.navigationController?.popViewController(animated: true)
-            }
-        })
+        if loginWithDropDown.indexForSelectedRow == 0 {
+            loginWithDeviceAdd(language: language)
+        } else {
+            loginWithEmail(language: language)
+        }
         
     }
     
@@ -139,7 +194,13 @@ class SettingViewController: UIViewController {
         alert.showAlert(title: ResourceText.commonAlert.localizedString(), message: ResourceText.settingAlertResetPassSuccess.localizedString(), buttonAction: ResourceText.commonClose.localizedString(), controller: self)
     }
     
+    @IBAction func typeOfLoginButton(_ sender: Any) {
+        loginWithDropDown.show()
+    }
+    
+    
     @IBAction func languageDropdownButton(_ sender: Any) {
         dropDown.show()
     }
+    
 }

@@ -15,6 +15,8 @@ class WebViewUserDefault {
     static let kLanguage = "language"
     static let kHome = "home"
     static let kIsLogin = "isLogin"
+    static let keyForDevice = "keyForDevice"
+    
     static func saveSettingWith(key: String, value: Int) {
         userDefault.set(value, forKey: key)
         userDefault.synchronize()
@@ -42,5 +44,13 @@ class WebViewUserDefault {
     
     static func getIsLogin() -> Bool {
         return userDefault.bool(forKey: kIsLogin)
+    }
+    
+    static func setKey(key: String) {
+        userDefault.set(key, forKey: keyForDevice)
+    }
+    
+    static func getKey() -> String {
+        return userDefault.string(forKey: keyForDevice) ?? ""
     }
 }

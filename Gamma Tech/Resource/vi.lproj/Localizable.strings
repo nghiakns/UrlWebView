@@ -17,9 +17,11 @@
 "Common.No" = "Không";
 "Common.Loading" = "Đang tải……";
 "Common.Login" = "Đăng nhập";
-"Common.Password" = "Mật khẩu";
+"Common.Password" = "Mật khẩu:";
 "Common.Name" = "Tên";
-"Common.Email" = "Email";
+"Common.Email" = "Email:";
+"Common.DeviceAddr" = "Device Addr:";
+"Common.Key" = "Key:";
 "Common.Add" = "Thêm";
 "Common.Alert" = "Thông báo";
 "Common.Alert.Error" = "Kiểm tra kết nối internet và thử lại!";
@@ -31,6 +33,8 @@
 
 "Setting.Title" = "Đăng nhập";
 "Setting.Notice" = "Nếu bạn đã mua gói tài khoản nâng cao, xin hãy nhập thông tin bên dưới để kích hoạt các tính năng mở rộng";
+"Setting.Key" = "Key";
+"Setting.EmailPassword" = "Email/Mật khẩu";
 "Setting.Language" = "Ngôn ngữ";
 "Setting.Language.VietNam" = "Vietnamese";
 "Setting.Language.English" = "English";

@@ -35,4 +35,9 @@ struct DropdownData {
         ResourceText.settingLanguageEnglish.localizedString()
     ]
     
+    static let typeOfLoginDropdown = [
+        ResourceText.settingKey.localizedString(),
+        ResourceText.settingEmailPassword.localizedString()
+    ]
+    
 }

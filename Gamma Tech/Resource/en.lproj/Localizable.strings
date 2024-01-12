@@ -17,9 +17,11 @@
 "Common.No" = "No";
 "Common.Loading" = "Loading…";
 "Common.Login" = "Login";
-"Common.Password" = "Password";
+"Common.Password" = "Password:";
 "Common.Name" = "Name";
-"Common.Email" = "Email";
+"Common.Email" = "Email:";
+"Common.DeviceAddr" = "Device Addr:";
+"Common.Key" = "Key:";
 "Common.Add" = "Add";
 "Common.Alert" = "Alert";
 "Common.Alert.Error" = "Check your internet connect and try again!";
@@ -31,6 +33,8 @@
 
 "Setting.Title" = "Login";
 "Setting.Notice" = "If you have purchased an upgrade package, enter your credentials below to enable addition features";
+"Setting.Key" = "Key";
+"Setting.EmailPassword" = "Email/Password";
 "Setting.Language" = "Language";
 "Setting.Language.VietNam" = "Vietnamese";
 "Setting.Language.English" = "English";
