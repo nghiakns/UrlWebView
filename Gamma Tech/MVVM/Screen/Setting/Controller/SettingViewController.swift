@@ -73,7 +73,7 @@ class SettingViewController: UIViewController {
             self?.dropDownButton.setTitle(item, for: .normal)
 //            WebViewUserDefault.saveDropdownLanguage(item: "en")
         }
-        languageDropdownImage.setImageColor(color: UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 1))
+        languageDropdownImage.setImageColor(color: UIColor(red: 150/255, green: 150/255, blue: 150/255, alpha: 1))
         headerView.backgroundColor = ResourceColor.headerView
         cancelButton.backgroundColor = ResourceColor.cancelButton
         nextButton.backgroundColor = ResourceColor.headerView
@@ -108,7 +108,7 @@ class SettingViewController: UIViewController {
         loginWithButton.layer.borderWidth = 1
         loginWithButton.layer.cornerRadius = loginWithButton.frame.height / 2
         loginWithButton.layer.masksToBounds = true
-        loginWithImage.setImageColor(color: UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 1))
+        loginWithImage.setImageColor(color: UIColor(red: 150/255, green: 150/255, blue: 150/255, alpha: 1))
     }
     
     func loginWithEmail(language: String) {

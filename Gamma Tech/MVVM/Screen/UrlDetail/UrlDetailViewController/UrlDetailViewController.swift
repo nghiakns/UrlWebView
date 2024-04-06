@@ -79,6 +79,7 @@ class UrlDetailViewController: UIViewController, didSeclectImage {
     private func configure() {
         deleteImage.isHidden = true
         deleteButton.isHidden = true
+        addButton.layer.cornerRadius = 5
         headerView.backgroundColor = ResourceColor.headerView
         DropdownDomain.anchorView = dropDownDomainButton
         DropdownDomain.dataSource = DropdownData.dropdownDomain
@@ -89,39 +90,16 @@ class UrlDetailViewController: UIViewController, didSeclectImage {
         } else {
             DropdownHome.dataSource = DropdownData.homeDropDown
         }
-        dropDownDomainButton.layer.borderColor = UIColor.lightGray.cgColor
-        dropDownDomainButton.layer.borderWidth = 1
-        dropDownDomainButton.layer.cornerRadius = 4
-        dropDownDomainButton.layer.masksToBounds = true
-        IPView.layer.borderWidth = 1
-        IPView.layer.cornerRadius = 25
-        IPView.layer.masksToBounds = true
-        homeView.layer.borderWidth = 1
-        homeView.layer.cornerRadius = 25
-        homeView.layer.masksToBounds = true
-        addButton.layer.borderWidth = 1
-        addButton.layer.cornerRadius = 25
-        addButton.layer.masksToBounds = true
-        domainView.layer.borderWidth = 1
-        domainView.layer.cornerRadius = 25
-        domainView.layer.masksToBounds = true
-        coradius(textfield: nameTextfield)
-        coradius(textfield: paramTextfield)
-        coradius(textfield: passTextField)
-        coradius(textfield: accTextfield)
-        //nguyen
-        dropDownDomainButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 0)
+        configButton(button: dropDownHomeButton)
+        configButton(button: dropDownDomainButton)
         DropdownDomain.selectionAction = { [weak self] (index: Int, item: String) in
             self?.dropDownDomainButton.setTitle(item, for: .normal)
             WebViewUserDefault.saveDropdownProtocols(item: item.getDomain())
         }
-        DropdownDomain.bottomOffset = CGPoint(x: 0, y: dropDownDomainButton.bounds.height)
-        dropDownHomeButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 0)
         DropdownHome.selectionAction = { [weak self] (index: Int, item: String) in
             self?.dropDownHomeButton.setTitle(item, for: .normal)
             WebViewUserDefault.saveDropdownHome(item: item.getHome())
         }
-        DropdownHome.bottomOffset = CGPoint(x: 0, y: dropDownHomeButton.bounds.height)
     }
     
     func configEditController() {
@@ -179,10 +157,11 @@ class UrlDetailViewController: UIViewController, didSeclectImage {
         }
     }
     
-    func coradius(textfield: UITextField) {
-        textfield.layer.borderWidth = 1
-        textfield.layer.cornerRadius = 25
-        textfield.layer.masksToBounds = true
+    func configButton(button: UIButton) {
+        button.layer.borderColor = UIColor.lightGray.cgColor
+        button.layer.borderWidth = 1
+        button.layer.cornerRadius = button.frame.height / 2
+        button.layer.masksToBounds = true
     }
     
     func getAdditionUrl(url: String, param: String) -> String {

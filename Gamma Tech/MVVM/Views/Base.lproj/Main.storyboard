@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="z5V-E7-oEX">
-    <device id="ipad10_5" orientation="portrait" layout="fullscreen" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="z5V-E7-oEX">
+    <device id="ipad10_5" orientation="landscape" layout="fullscreen" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -15,66 +15,66 @@
             <objects>
                 <viewController storyboardIdentifier="alert" id="XZd-2v-L3l" customClass="AlertViewController" customModule="Gamma_Tech" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lI6-fa-DRS">
-                        <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jtu-dc-rWl">
-                                <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.5041132036423841" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sjy-ra-Cup">
-                                <rect key="frame" x="10" y="222.5" width="814" height="667"/>
+                                <rect key="frame" x="10" y="167" width="1092" height="500"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thông tin liên hệ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lo0-Mt-Hr9">
-                                        <rect key="frame" x="344" y="15" width="126" height="19"/>
+                                        <rect key="frame" x="483" y="15" width="126" height="19"/>
                                         <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gamma Tech., JSC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fKw-3H-MKz">
-                                        <rect key="frame" x="333.5" y="39" width="147" height="19"/>
+                                        <rect key="frame" x="472.5" y="39" width="147" height="19"/>
                                         <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Văn phòng làm việc:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xQg-vT-0oq">
-                                        <rect key="frame" x="20" y="68" width="774" height="19"/>
+                                        <rect key="frame" x="20" y="68" width="1052" height="19"/>
                                         <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tòa nhà N01-T5 đường Hoàng Minh Thảo, khu Đoàn ngoại giao, Bắc Từ Liêm, Hà Nội" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fxu-iB-VAw">
-                                        <rect key="frame" x="10" y="92" width="794" height="19"/>
+                                        <rect key="frame" x="10" y="92" width="1072" height="19"/>
                                         <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Căn hộ thông minh mẫu tại Hà Nội:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="diT-uo-cj8">
-                                        <rect key="frame" x="10" y="126" width="794" height="19"/>
+                                        <rect key="frame" x="10" y="126" width="1072" height="19"/>
                                         <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Căn hộ 2601, Tòa nhà N01-T8, khu Đoàn ngoại giao, Bắc Từ Liêm, Hà Nội" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Va6-vS-qwX">
-                                        <rect key="frame" x="10" y="150" width="794" height="20.5"/>
+                                        <rect key="frame" x="10" y="150" width="1072" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Showroom tại TP.HCM:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zNM-iF-VjD">
-                                        <rect key="frame" x="10" y="180.5" width="794" height="21"/>
+                                        <rect key="frame" x="10" y="180.5" width="1072" height="21"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="105-H7 Mỹ Hưng, Phú Mỹ Hưng, Quận 7, TP. Hồ Chí Minh" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="10r-Aq-PcP">
-                                        <rect key="frame" x="10" y="206.5" width="794" height="20.5"/>
+                                        <rect key="frame" x="10" y="206.5" width="1072" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qz7-Dj-vs0">
-                                        <rect key="frame" x="20" y="597" width="774" height="50"/>
+                                        <rect key="frame" x="20" y="430" width="1052" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="pHx-41-Ahe"/>
                                         </constraints>
@@ -85,7 +85,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fh1-oI-Qjx">
-                                        <rect key="frame" x="10" y="237" width="794" height="61"/>
+                                        <rect key="frame" x="10" y="237" width="1072" height="61"/>
                                         <string key="text">Hotline: 0977 345 151
 Website: https://gammatech.com.vn/
 Email: lienhe@gammavietnam.com.vn</string>
@@ -181,11 +181,11 @@ Email: lienhe@gammavietnam.com.vn</string>
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="Gamma_Tech" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cty-GI-Fhc">
-                                <rect key="frame" x="0.0" y="20" width="834" height="50"/>
+                                <rect key="frame" x="0.0" y="20" width="1112" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eG0-Ux-bat">
                                         <rect key="frame" x="20" y="10" width="30" height="30"/>
@@ -217,13 +217,13 @@ Email: lienhe@gammavietnam.com.vn</string>
                                         <rect key="frame" x="70" y="10" width="30" height="30"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="elJ-W7-HeQ">
-                                        <rect key="frame" x="389.5" y="11" width="55" height="28"/>
+                                        <rect key="frame" x="528.5" y="11" width="55" height="28"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                         <color key="textColor" systemColor="systemBlueColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fsn-oe-jCB">
-                                        <rect key="frame" x="784" y="10" width="30" height="30"/>
+                                        <rect key="frame" x="1062" y="10" width="30" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Fsn-oe-jCB" secondAttribute="height" id="0Zo-lW-CkI"/>
                                         </constraints>
@@ -233,7 +233,7 @@ Email: lienhe@gammavietnam.com.vn</string>
                                         </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-add-99" translatesAutoresizingMaskIntoConstraints="NO" id="aBl-Sg-f3H">
-                                        <rect key="frame" x="784" y="10" width="30" height="30"/>
+                                        <rect key="frame" x="1062" y="10" width="30" height="30"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -268,7 +268,7 @@ Email: lienhe@gammavietnam.com.vn</string>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="F46-7e-SCs">
-                                <rect key="frame" x="0.0" y="70" width="834" height="1042"/>
+                                <rect key="frame" x="0.0" y="70" width="1112" height="764"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -303,11 +303,11 @@ Email: lienhe@gammavietnam.com.vn</string>
             <objects>
                 <viewController storyboardIdentifier="UrlDetailViewController" id="l4p-zB-cQG" customClass="UrlDetailViewController" customModule="Gamma_Tech" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ryM-MQ-kfc">
-                        <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IbO-HF-fqE">
-                                <rect key="frame" x="0.0" y="20" width="834" height="50"/>
+                                <rect key="frame" x="0.0" y="20" width="1112" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Osu-5i-WuB">
                                         <rect key="frame" x="20" y="10" width="30" height="30"/>
@@ -322,13 +322,13 @@ Email: lienhe@gammavietnam.com.vn</string>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thêm URL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PkB-yq-QVx">
-                                        <rect key="frame" x="361.5" y="12" width="111" height="26"/>
+                                        <rect key="frame" x="500.5" y="12" width="111" height="26"/>
                                         <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="23"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R00-G8-sUq">
-                                        <rect key="frame" x="764" y="5" width="40" height="40"/>
+                                        <rect key="frame" x="1042" y="5" width="40" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="Ghy-jf-TRJ"/>
                                             <constraint firstAttribute="width" constant="40" id="xiq-EU-vWH"/>
@@ -339,7 +339,7 @@ Email: lienhe@gammavietnam.com.vn</string>
                                         </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-remove-96" translatesAutoresizingMaskIntoConstraints="NO" id="Frq-S2-NTk">
-                                        <rect key="frame" x="764" y="5" width="40" height="40"/>
+                                        <rect key="frame" x="1042" y="5" width="40" height="40"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.87843137250000003" green="0.49803921569999998" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -358,10 +358,10 @@ Email: lienhe@gammavietnam.com.vn</string>
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cyz-YN-yiW">
-                                <rect key="frame" x="0.0" y="70" width="834" height="1042"/>
+                                <rect key="frame" x="0.0" y="70" width="1112" height="764"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uHe-Fr-Yb9" userLabel="ContenView">
-                                        <rect key="frame" x="0.0" y="0.0" width="834" height="1000"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="1112" height="1000"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Địa chỉ Ip hoặc tên miền" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rs5-nF-onG">
                                                 <rect key="frame" x="20" y="20" width="172" height="18"/>
@@ -370,7 +370,7 @@ Email: lienhe@gammavietnam.com.vn</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1YK-Z9-VKs">
-                                                <rect key="frame" x="20" y="237" width="794" height="50"/>
+                                                <rect key="frame" x="20" y="237" width="1072" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="C4Z-IP-Je1"/>
                                                 </constraints>
@@ -378,7 +378,7 @@ Email: lienhe@gammavietnam.com.vn</string>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Admin" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aeO-vS-TKa">
-                                                <rect key="frame" x="20" y="345" width="794" height="50"/>
+                                                <rect key="frame" x="20" y="345" width="1072" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="6uJ-M1-iw3"/>
                                                 </constraints>
@@ -386,7 +386,7 @@ Email: lienhe@gammavietnam.com.vn</string>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UvE-Q1-YZf">
-                                                <rect key="frame" x="20" y="453" width="794" height="50"/>
+                                                <rect key="frame" x="20" y="453" width="1072" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="r2i-R4-Dtk"/>
                                                 </constraints>
@@ -444,7 +444,7 @@ Email: lienhe@gammavietnam.com.vn</string>
                                                 </constraints>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fhh-j2-2Rg">
-                                                <rect key="frame" x="20" y="889" width="794" height="50"/>
+                                                <rect key="frame" x="20" y="889" width="1072" height="50"/>
                                                 <color key="backgroundColor" red="0.87843137250000003" green="0.49803921569999998" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="w3z-ul-i6R"/>
@@ -459,10 +459,10 @@ Email: lienhe@gammavietnam.com.vn</string>
                                                 </connections>
                                             </button>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Rta-7d-WLo">
-                                                <rect key="frame" x="765" y="523" width="51" height="31"/>
+                                                <rect key="frame" x="1043" y="523" width="51" height="31"/>
                                             </switch>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Params" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hdK-VG-uds">
-                                                <rect key="frame" x="20" y="789" width="794" height="50"/>
+                                                <rect key="frame" x="20" y="789" width="1072" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="Inp-FY-HT4"/>
                                                 </constraints>
@@ -470,10 +470,10 @@ Email: lienhe@gammavietnam.com.vn</string>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bbi-py-JO9">
-                                                <rect key="frame" x="20" y="58" width="794" height="50"/>
+                                                <rect key="frame" x="20" y="58" width="1072" height="50"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="192.168.1.25" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="STH-Cz-H0B">
-                                                        <rect key="frame" x="0.0" y="0.0" width="794" height="50"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="1072" height="50"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
@@ -488,10 +488,10 @@ Email: lienhe@gammavietnam.com.vn</string>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6gD-4T-Ohk">
-                                                <rect key="frame" x="20" y="128" width="794" height="50"/>
+                                                <rect key="frame" x="20" y="128" width="1072" height="50"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nZg-gX-zgF">
-                                                        <rect key="frame" x="0.0" y="0.0" width="794" height="50"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="1072" height="50"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="-">
                                                             <color key="baseForegroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -501,7 +501,7 @@ Email: lienhe@gammavietnam.com.vn</string>
                                                         </connections>
                                                     </button>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowtriangle.down.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="8Pf-tJ-v3f">
-                                                        <rect key="frame" x="754" y="17" width="20" height="16"/>
+                                                        <rect key="frame" x="1032" y="17" width="20" height="16"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="20" id="4TI-Fo-vaT"/>
                                                             <constraint firstAttribute="width" constant="20" id="cSQ-Vk-OA3"/>
@@ -520,10 +520,10 @@ Email: lienhe@gammavietnam.com.vn</string>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pq8-TF-fD8">
-                                                <rect key="frame" x="20" y="681" width="794" height="50"/>
+                                                <rect key="frame" x="20" y="681" width="1072" height="50"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fmt-js-ZUU">
-                                                        <rect key="frame" x="0.0" y="0.0" width="794" height="50"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="1072" height="50"/>
                                                         <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="17"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" title="-">
@@ -534,7 +534,7 @@ Email: lienhe@gammavietnam.com.vn</string>
                                                         </connections>
                                                     </button>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowtriangle.down.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="e48-e8-TL2">
-                                                        <rect key="frame" x="754" y="17" width="20" height="16"/>
+                                                        <rect key="frame" x="1032" y="17" width="20" height="16"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="20" id="LMt-nR-znt"/>
                                                             <constraint firstAttribute="height" constant="20" id="bQA-l2-930"/>
@@ -673,34 +673,34 @@ Email: lienhe@gammavietnam.com.vn</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5r4-2v-gcp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="0z5-ac-p7b" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="927.536231884058" y="114.50892857142857"/>
+            <point key="canvasLocation" x="927.51798561151077" y="114.3884892086331"/>
         </scene>
         <!--Alert Icon View Controller-->
         <scene sceneID="u54-1O-jjG">
             <objects>
                 <viewController storyboardIdentifier="AlertIconViewController" id="6q1-z0-GP4" customClass="AlertIconViewController" customModule="Gamma_Tech" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="57K-Mg-k9i">
-                        <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n9C-ve-IDX">
-                                <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="shJ-Zd-lZF">
-                                <rect key="frame" x="10" y="333.5" width="814" height="445"/>
+                                <rect key="frame" x="10" y="250" width="1092" height="334"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chọn Icon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I5b-A2-eHP">
-                                        <rect key="frame" x="368" y="20" width="78" height="21"/>
+                                        <rect key="frame" x="507" y="20" width="78" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tT0-uX-rgf">
-                                        <rect key="frame" x="0.0" y="61" width="814" height="216"/>
+                                        <rect key="frame" x="0.0" y="61" width="1092" height="216"/>
                                         <subviews>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="rtn-6d-0NB">
-                                                <rect key="frame" x="0.0" y="0.0" width="814" height="216"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="1092" height="216"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="5og-vw-SfZ">
                                                     <size key="itemSize" width="40" height="40"/>
@@ -730,7 +730,7 @@ Email: lienhe@gammavietnam.com.vn</string>
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gZ7-tI-FZt">
-                                        <rect key="frame" x="332" y="287" width="150" height="35"/>
+                                        <rect key="frame" x="471" y="287" width="150" height="35"/>
                                         <color key="backgroundColor" red="0.83921568629999999" green="0.49803921569999998" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="150" id="sGf-CC-3aF"/>
@@ -745,7 +745,7 @@ Email: lienhe@gammavietnam.com.vn</string>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="gZ7-tI-FZt" firstAttribute="centerX" secondItem="shJ-Zd-lZF" secondAttribute="centerX" id="KJR-eg-S4j"/>
                                     <constraint firstItem="I5b-A2-eHP" firstAttribute="top" secondItem="shJ-Zd-lZF" secondAttribute="top" constant="20" id="VAp-G9-kVF"/>
@@ -786,14 +786,14 @@ Email: lienhe@gammavietnam.com.vn</string>
             <objects>
                 <viewController storyboardIdentifier="webview" id="Ju1-tE-JCC" customClass="WebviewViewController" customModule="Gamma_Tech" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bsY-rn-jn4">
-                        <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TTM-Kg-e3M">
-                                <rect key="frame" x="0.0" y="70" width="834" height="1042"/>
+                                <rect key="frame" x="0.0" y="70" width="1112" height="764"/>
                                 <subviews>
                                     <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lAg-VK-kLF">
-                                        <rect key="frame" x="0.0" y="0.0" width="834" height="1042"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="1112" height="764"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <wkWebViewConfiguration key="configuration">
                                             <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -810,10 +810,10 @@ Email: lienhe@gammavietnam.com.vn</string>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1yx-8n-bZp">
-                                <rect key="frame" x="0.0" y="20" width="834" height="50"/>
+                                <rect key="frame" x="0.0" y="20" width="1112" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kol-V7-5cN">
-                                        <rect key="frame" x="759" y="5" width="60" height="40"/>
+                                        <rect key="frame" x="1037" y="5" width="60" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="60" id="dZ3-LM-qON"/>
                                         </constraints>
@@ -823,7 +823,7 @@ Email: lienhe@gammavietnam.com.vn</string>
                                         </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow.uturn.backward.circle.fill" translatesAutoresizingMaskIntoConstraints="NO" id="Cqu-9S-hon">
-                                        <rect key="frame" x="759" y="5" width="60" height="40"/>
+                                        <rect key="frame" x="1037" y="5" width="60" height="40"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.98039215686274506" green="0.6470588235294118" blue="0.078431372549019607" alpha="1" colorSpace="calibratedRGB"/>
@@ -865,11 +865,11 @@ Email: lienhe@gammavietnam.com.vn</string>
             <objects>
                 <viewController storyboardIdentifier="setting" id="DmO-at-Cv1" customClass="SettingViewController" customModule="Gamma_Tech" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QjO-Ko-JSQ">
-                        <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I7h-dC-4oI">
-                                <rect key="frame" x="0.0" y="20" width="834" height="50"/>
+                                <rect key="frame" x="0.0" y="20" width="1112" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t2w-q2-bOw">
                                         <rect key="frame" x="20" y="5" width="40" height="40"/>
@@ -889,7 +889,7 @@ Email: lienhe@gammavietnam.com.vn</string>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="St1-41-fUx">
-                                        <rect key="frame" x="764" y="5" width="40" height="40"/>
+                                        <rect key="frame" x="1042" y="5" width="40" height="40"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="St1-41-fUx" secondAttribute="height" id="Rxj-0b-xbi"/>
@@ -907,7 +907,7 @@ Email: lienhe@gammavietnam.com.vn</string>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I2O-q8-e4D">
-                                        <rect key="frame" x="388.5" y="12" width="57" height="26"/>
+                                        <rect key="frame" x="527.5" y="12" width="57" height="26"/>
                                         <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="23"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -925,7 +925,7 @@ Email: lienhe@gammavietnam.com.vn</string>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nếu bạn đã mua gói tài khoản nâng cao, xin hãy nhập thông tin bên dưới để kích hoạt các tính năng mở rộng" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4xb-th-LTV">
-                                <rect key="frame" x="20" y="110" width="794" height="18"/>
+                                <rect key="frame" x="20" y="110" width="1072" height="18"/>
                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -937,10 +937,10 @@ Email: lienhe@gammavietnam.com.vn</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TQh-RD-qtf">
-                                <rect key="frame" x="140" y="142" width="674" height="50"/>
+                                <rect key="frame" x="140" y="142" width="952" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S6x-Ot-dxF">
-                                        <rect key="frame" x="0.0" y="0.0" width="674" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="952" height="50"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="-">
                                             <color key="baseForegroundColor" systemColor="labelColor"/>
@@ -950,7 +950,7 @@ Email: lienhe@gammavietnam.com.vn</string>
                                         </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowtriangle.down.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="WuI-pR-zBj">
-                                        <rect key="frame" x="634" y="17" width="20" height="16"/>
+                                        <rect key="frame" x="912" y="17" width="20" height="16"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="7SJ-Tg-QPv"/>
                                             <constraint firstAttribute="width" constant="20" id="jnW-hG-aSa"/>
@@ -981,7 +981,7 @@ Email: lienhe@gammavietnam.com.vn</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="brq-SP-ZaE">
-                                <rect key="frame" x="344.5" y="401.5" width="145" height="34.5"/>
+                                <rect key="frame" x="483.5" y="397.5" width="145" height="38.5"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Reset Password"/>
                                 <connections>
@@ -989,7 +989,7 @@ Email: lienhe@gammavietnam.com.vn</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OlB-rg-R3w">
-                                <rect key="frame" x="20" y="486" width="333.5" height="50"/>
+                                <rect key="frame" x="20" y="486" width="445" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="KxX-pH-e1g"/>
                                 </constraints>
@@ -1008,7 +1008,7 @@ Email: lienhe@gammavietnam.com.vn</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QWK-I0-sM9">
-                                <rect key="frame" x="480.5" y="486" width="333.5" height="50"/>
+                                <rect key="frame" x="647" y="486" width="445" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="XZO-td-mnW"/>
                                 </constraints>
@@ -1020,35 +1020,35 @@ Email: lienhe@gammavietnam.com.vn</string>
                                     <action selector="nextButton:" destination="DmO-at-Cv1" eventType="touchUpInside" id="wmV-RH-0tD"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ir2-oD-dVq">
-                                <rect key="frame" x="140" y="210.5" width="674" height="21"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ir2-oD-dVq">
+                                <rect key="frame" x="140" y="204" width="952" height="34"/>
                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bm4-at-EBq">
-                                <rect key="frame" x="140" y="259.5" width="674" height="19"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bm4-at-EBq">
+                                <rect key="frame" x="140" y="252" width="952" height="34"/>
                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hwg-FF-wO7">
-                                <rect key="frame" x="140" y="233.5" width="674" height="1"/>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hwg-FF-wO7">
+                                <rect key="frame" x="140" y="240" width="952" height="1"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="4ko-Ot-VSP"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dBz-KS-r16">
-                                <rect key="frame" x="140" y="280.5" width="674" height="1"/>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dBz-KS-r16">
+                                <rect key="frame" x="140" y="288" width="952" height="1"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="Fs5-SV-jW1"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7hh-Cb-xi6">
-                                <rect key="frame" x="140" y="302" width="674" height="50"/>
+                                <rect key="frame" x="140" y="302" width="952" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bAj-M9-6Qw">
-                                        <rect key="frame" x="0.0" y="0.0" width="674" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="952" height="50"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="-">
                                             <color key="baseForegroundColor" systemColor="labelColor"/>
@@ -1058,7 +1058,7 @@ Email: lienhe@gammavietnam.com.vn</string>
                                         </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowtriangle.down.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ajk-dq-TI3">
-                                        <rect key="frame" x="634" y="17" width="20" height="16"/>
+                                        <rect key="frame" x="912" y="17" width="20" height="16"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="KjN-AC-FQD"/>
                                             <constraint firstAttribute="width" constant="20" id="QG5-3M-pba"/>
@@ -1156,18 +1156,18 @@ Email: lienhe@gammavietnam.com.vn</string>
         <image name="icons8-remove-96" width="96" height="96"/>
         <image name="login" width="209" height="209"/>
         <image name="logo_gmt" width="400" height="400"/>
-        <image name="rectangle.portrait.and.arrow.right" catalog="system" width="128" height="109"/>
+        <image name="rectangle.portrait.and.arrow.right" catalog="system" width="128" height="108"/>
         <systemColor name="labelColor">
-            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGroupedBackgroundColor">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tertiarySystemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

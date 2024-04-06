@@ -21,6 +21,7 @@ class UrlTableViewCell: UITableViewCell {
         viewCell.layer.borderWidth = 2
         viewCell.layer.borderColor = CGColor(red: 68/255, green: 68/255, blue: 68/255, alpha: 1)
         viewCell.layer.cornerRadius = 5
+        iconUrlImageView.tintColor = UIColor(red: 150/255, green: 150/255, blue: 150/255, alpha: 1)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
