@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UrlTableViewCell" rowHeight="76" id="KGk-i7-Jjw" customClass="UrlTableViewCell" customModule="Gamma_Tech" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="402" height="76"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="402" height="76"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FyG-tx-nGN">
+                        <rect key="frame" x="7" y="7" width="388" height="62"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_gmt" translatesAutoresizingMaskIntoConstraints="NO" id="GIw-2k-afW">
+                                <rect key="frame" x="10" y="10" width="42" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="GIw-2k-afW" secondAttribute="height" id="li2-BZ-iOr"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CTz-cr-039">
+                                <rect key="frame" x="67" y="20.5" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6zr-pg-wyJ">
+                                <rect key="frame" x="341" y="15" width="32" height="32"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="6zr-pg-wyJ" secondAttribute="height" id="u85-Mx-BdJ"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <connections>
+                                    <action selector="editUrlButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Sa2-D4-KKu"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gearshape.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="5mE-HH-FHA">
+                                <rect key="frame" x="341" y="15" width="32" height="31.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="tintColor" systemColor="systemGrayColor"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6zr-pg-wyJ" firstAttribute="centerY" secondItem="FyG-tx-nGN" secondAttribute="centerY" id="7KO-G7-4nz"/>
+                            <constraint firstItem="6zr-pg-wyJ" firstAttribute="top" secondItem="FyG-tx-nGN" secondAttribute="top" constant="15" id="LLs-dx-dUS"/>
+                            <constraint firstItem="5mE-HH-FHA" firstAttribute="bottom" secondItem="6zr-pg-wyJ" secondAttribute="bottom" id="Qew-pN-6gL"/>
+                            <constraint firstAttribute="bottom" secondItem="6zr-pg-wyJ" secondAttribute="bottom" constant="15" id="R1F-Fs-S2G"/>
+                            <constraint firstItem="CTz-cr-039" firstAttribute="leading" secondItem="GIw-2k-afW" secondAttribute="trailing" constant="15" id="XKs-V0-GXw"/>
+                            <constraint firstItem="GIw-2k-afW" firstAttribute="centerY" secondItem="FyG-tx-nGN" secondAttribute="centerY" id="ZWp-Il-mVZ"/>
+                            <constraint firstItem="5mE-HH-FHA" firstAttribute="leading" secondItem="6zr-pg-wyJ" secondAttribute="leading" id="ZiF-Wh-QLv"/>
+                            <constraint firstItem="CTz-cr-039" firstAttribute="centerY" secondItem="FyG-tx-nGN" secondAttribute="centerY" id="gU7-uD-a2S"/>
+                            <constraint firstItem="5mE-HH-FHA" firstAttribute="trailing" secondItem="6zr-pg-wyJ" secondAttribute="trailing" id="h1q-JL-MPX"/>
+                            <constraint firstItem="GIw-2k-afW" firstAttribute="top" secondItem="FyG-tx-nGN" secondAttribute="top" constant="10" id="hm9-Wl-eDT"/>
+                            <constraint firstItem="5mE-HH-FHA" firstAttribute="top" secondItem="6zr-pg-wyJ" secondAttribute="top" id="hzi-GO-N2J"/>
+                            <constraint firstAttribute="bottom" secondItem="GIw-2k-afW" secondAttribute="bottom" constant="10" id="iyq-Lh-fuN"/>
+                            <constraint firstAttribute="trailing" secondItem="6zr-pg-wyJ" secondAttribute="trailing" constant="15" id="mTD-VM-Sgj"/>
+                            <constraint firstItem="GIw-2k-afW" firstAttribute="leading" secondItem="FyG-tx-nGN" secondAttribute="leading" constant="10" id="nZn-s6-31x"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="FyG-tx-nGN" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="7" id="7ef-IH-TC9"/>
+                    <constraint firstItem="FyG-tx-nGN" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="7" id="G3v-PG-eWr"/>
+                    <constraint firstAttribute="trailing" secondItem="FyG-tx-nGN" secondAttribute="trailing" constant="7" id="Py0-Gv-se5"/>
+                    <constraint firstAttribute="bottom" secondItem="FyG-tx-nGN" secondAttribute="bottom" constant="7" id="wND-eg-Clf"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="iconUrlImageView" destination="GIw-2k-afW" id="qx6-AO-ff1"/>
+                <outlet property="name" destination="CTz-cr-039" id="bsZ-UB-SpQ"/>
+                <outlet property="viewCell" destination="FyG-tx-nGN" id="VQg-zh-haK"/>
+            </connections>
+            <point key="canvasLocation" x="191.30434782608697" y="110.49107142857143"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="gearshape.fill" catalog="system" width="128" height="123"/>
+        <image name="logo_gmt" width="400" height="400"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

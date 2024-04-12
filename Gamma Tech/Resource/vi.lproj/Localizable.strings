@@ -1,0 +1,65 @@
+/* 
+  Localizable.strings
+  WebView
+
+  Created by Kim Nghĩa on 18/03/2023.
+  
+*/
+"Common.Ok" = "OK";
+"Common.Cancel" = "HUỶ";
+"Common.Next" = "TIẾP TỤC";
+"Common.Close" = "Đóng";
+"Common.Information" = "Thông tin liên hệ";
+"Common.Confirmation" = "Xác nhận";
+"Common.Warning" = "Cảnh báo";
+"Common.Back" = "Back";
+"Common.Yes" = "Yes";
+"Common.No" = "Không";
+"Common.Loading" = "Đang tải……";
+"Common.Login" = "Đăng nhập";
+"Common.Password" = "Mật khẩu:";
+"Common.Name" = "Tên";
+"Common.Email" = "Email:";
+"Common.DeviceAddr" = "Device Addr:";
+"Common.Key" = "Key:";
+"Common.Add" = "Thêm";
+"Common.Alert" = "Thông báo";
+"Common.Alert.Error" = "Kiểm tra kết nối internet và thử lại!";
+
+"Home.Title" = "Home";
+"Home.Alert.LoginSuccess" = "Đăng nhập thành công!";
+"Home.Alert.ChangeLanguage" = "Thay đổi ngôn ngữ thành công!";
+"Home.Alert.UrlOrNetworkError" = "Kiểm tra lại url hoặc kết nối internet và thử lại";
+
+"Setting.Title" = "Đăng nhập";
+"Setting.Notice" = "Nếu bạn đã mua gói tài khoản nâng cao, xin hãy nhập thông tin bên dưới để kích hoạt các tính năng mở rộng";
+"Setting.Key" = "Key";
+"Setting.EmailPassword" = "Email/Mật khẩu";
+"Setting.Language" = "Ngôn ngữ";
+"Setting.Language.VietNam" = "Vietnamese";
+"Setting.Language.English" = "English";
+"Setting.ResetPassword" = "Lấy lại mật khẩu";
+"Setting.Alert.LogoutSuccess" = "Đăng xuất thành công!";
+"Setting.Alert.ResetPassSuccess" = "Lấy lại mật khẩu thành công!";
+
+"Network.Response.Success" = "welcomergok";
+
+"Add.Title" = "Thêm URL";
+"Add.Domain" = "Địa chỉ IP hoặc tên miền";
+"Add.HTTP" = "http";
+"Add.HTTPS" = "https";
+"Add.RTSP" = "rtsp";
+"Add.Autoload" = "Tự tải khi bật app";
+"Add.AutoloadPage" = "Trang chính";
+"Add.AutoloadPage.Touch" = "Touch";
+"Add.AutoloadPage.ScadaVis" = "Scada-Vis";
+"Add.AutoloadPage.Schedulers" = "Schedulers";
+"Add.AutoloadPage.Mosaic" = "Mosaic";
+"Add.AutoloadPage.Assistant" = "Assistant";
+"Add.AutoloadPage.Premium" = "Premium";
+"Add.Param" = "Tham số";
+"Add.Icon" = "Icon";
+"Add.Alert.FillInfo" = "Hãy điền đầy đủ địa chỉ ip/tên miền và tên!";
+
+"UpdateURL" = "Cập nhật URL";
+"UdateURL.Alert.DeleteURL" = "Bạn chắc chắn muốn xoá URL?";
