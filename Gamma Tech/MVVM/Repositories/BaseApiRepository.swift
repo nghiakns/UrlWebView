@@ -8,7 +8,7 @@
 import Foundation
 
 struct BaseApiRespositories {
-    static let url = "https://raigamma.000webhostapp.com/rai.php"
+    static let url = "http://gammatechjsc.ddns.net:5080/phpmyadmin/rai.php"
 }
 
 enum EventHandle {
